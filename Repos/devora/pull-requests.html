@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Devora AI - Pull Requests</title><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#aeb9d0", "on-surface": "#dae2fd", "primary-fixed": "#d8e2ff", "on-secondary-fixed-variant": "#3c475a", "on-secondary": "#263143", "primary": "#adc6ff", "on-primary-fixed-variant": "#004395", "on-secondary-fixed": "#111c2d", "error-container": "#93000a", "on-background": "#dae2fd", "outline": "#8c909f", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#723600", "surface-container-highest": "#2d3449", "surface-dim": "#0b1326", "on-primary-container": "#00285d", "secondary-fixed": "#d8e3fb", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-tertiary-fixed": "#311400", "outline-variant": "#424754", "surface-tint": "#adc6ff", "on-tertiary-container": "#461f00", "primary-fixed-dim": "#adc6ff", "tertiary-fixed": "#ffdcc6", "on-primary": "#002e6a", "surface-container": "#171f33", "surface-container-low": "#131b2e", "tertiary-container": "#df7412", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb786", "on-surface-variant": "#c2c6d6", "surface": "#0b1326", "background": "#0b1326", "on-error": "#690005", "tertiary": "#ffb786", "on-tertiary": "#502400", "surface-bright": "#31394d", "secondary": "#bcc7de", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "secondary-container": "#3e495d", "primary-container": "#4d8eff", "on-primary-fixed": "#001a42", "inverse-primary": "#005ac2", "inverse-surface": "#dae2fd", "secondary-fixed-dim": "#bcc7de" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "base": "4px", "lg": "24px", "gutter": "16px", "xs": "4px", "margin-mobile": "16px", "margin-desktop": "32px", "md": "16px", "sm": "8px", "xl": "32px" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-mono": ["JetBrains Mono"], "code-block": ["JetBrains Mono"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container border-r border-outline-variant z-50 flex flex-col">
+  <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-md">
+      <span class="material-symbols-outlined text-[20px]">terminal</span>
+    </div>
+    <span class="font-headline-sm text-on-surface tracking-tight">Devora AI</span>
+  </div>
+  <div class="px-lg mb-lg">
+    <a href="chat.html" class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-md px-lg rounded-xl font-headline-sm hover:opacity-90 transition-opacity">
+      <span class="material-symbols-outlined text-[20px]">add_circle</span>New Chat
+    </a>
+  </div>
+  <nav class="flex-1 overflow-y-auto px-md space-y-xl" data-active-classes="bg-secondary-container text-on-secondary-container font-medium">
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Chat</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="chat" href="chat.html">
+        <span class="material-symbols-outlined mr-sm">smart_toy</span>AI Assistant
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Insights</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined mr-sm">dashboard</span>Dashboard
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-tickets" href="tickets.html">
+        <span class="material-symbols-outlined mr-sm">confirmation_number</span>My Tickets
+      </a>
+      <a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-secondary-container text-on-secondary-container font-medium" data-path="pull-requests" href="pull-requests.html">
+        <span class="material-symbols-outlined mr-sm">merge</span>Pull Requests
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="activity" href="activity.html">
+        <span class="material-symbols-outlined mr-sm">switch_account</span>Activity
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Management</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="integrations" href="integrations.html">
+        <span class="material-symbols-outlined mr-sm">extension</span>Integrations
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+        <span class="material-symbols-outlined mr-sm">settings</span>Settings
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-settings" href="api-settings.html">
+        <span class="material-symbols-outlined mr-sm">key</span>API Settings
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-xl">
+    <div class="flex items-center gap-lg">
+      <h1 class="font-headline-sm text-on-surface">Devora AI</h1>
+      <div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+        <div class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+        </div>
+        <span class="text-body-sm text-on-surface-variant">All systems connected</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-lg">
+      <div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-lg border border-outline-variant text-outline cursor-pointer hover:bg-surface-container-high transition-colors" onclick="Devora.openSearchPalette()">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+        <span class="text-body-md">Search</span>
+        <span class="text-label-mono bg-surface-container px-sm py-[2px] rounded border border-outline-variant ml-md">⌘K</span>
+      </div>
+      <div class="flex items-center gap-md">
+        <div class="relative cursor-pointer p-1 rounded-lg hover:bg-surface-container-high transition-colors" onclick="Devora.toggleNotifications(this)">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="Devora.toggleProfileMenu(this)">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 min-h-screen bg-background">
+    <div class="flex flex-col w-full px-lg py-xl space-y-xl">
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-md gap-md">
+        <div class="space-y-sm">
+          <h2 class="font-display-lg text-on-surface">Pull Requests</h2>
+          <p class="font-body-md text-on-surface-variant">Manage and review open pull requests across your repositories.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-md">
+          <div class="relative flex items-center bg-surface-container-low rounded-lg border border-outline-variant/40 px-md h-10 w-64">
+            <span class="material-symbols-outlined text-outline text-[18px] mr-sm">search</span>
+            <input id="pr-search-input" type="text" placeholder="Filter PRs..." class="bg-transparent border-none outline-none font-body-md text-on-surface text-sm w-full placeholder:text-outline" />
+          </div>
+          <button id="open-new-pr-btn" class="bg-primary text-on-primary font-headline-sm px-md py-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-sm shadow-md cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">add</span> New Pull Request
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1" id="pr-filters-container">
+        <button data-filter="all" class="pr-filter-tab px-md py-xs rounded-full bg-secondary-container text-on-secondary-container font-headline-sm text-sm">All (<span id="count-all-prs">0</span>)</button>
+        <button data-filter="review" class="pr-filter-tab px-md py-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-md text-sm">Needs Review (<span id="count-review-prs">0</span>)</button>
+        <button data-filter="approved" class="pr-filter-tab px-md py-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-md text-sm">Approved (<span id="count-approved-prs">0</span>)</button>
+        <button data-filter="draft" class="pr-filter-tab px-md py-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-md text-sm">Draft (<span id="count-draft-prs">0</span>)</button>
+        <button data-filter="merged" class="pr-filter-tab px-md py-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-md text-sm">Merged (<span id="count-merged-prs">0</span>)</button>
+      </div>
+
+      <div class="grid grid-cols-12 gap-lg">
+        <div class="col-span-12 xl:col-span-8 space-y-lg">
+          <!-- Waiting for Review section -->
+          <section class="space-y-md">
+            <div class="flex items-center justify-between">
+              <h3 class="font-headline-sm text-on-surface flex items-center gap-sm">
+                <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+                Active Pull Requests
+              </h3>
+              <span id="active-pr-badge" class="bg-surface-container-high text-on-surface-variant font-label-mono px-sm py-[2px] rounded-md text-xs">Loading...</span>
+            </div>
+            <div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden divide-y divide-outline-variant/40" id="active-prs-container">
+              <!-- Rendered via JS -->
+            </div>
+          </section>
+
+          <!-- Merged PRs section -->
+          <section class="space-y-md">
+            <div class="flex items-center justify-between">
+              <h3 class="font-headline-sm text-on-surface flex items-center gap-sm">
+                <span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+                Recently Merged
+              </h3>
+            </div>
+            <div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden divide-y divide-outline-variant/40" id="merged-prs-container">
+              <!-- Rendered via JS -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: PR Stats & Guidelines -->
+        <div class="col-span-12 xl:col-span-4 flex flex-col gap-lg">
+          <div class="bg-surface-container rounded-xl p-lg border border-outline-variant">
+            <h3 class="font-headline-sm text-on-surface mb-md">Reviewer Insights</h3>
+            <div class="space-y-md">
+              <div class="flex items-center justify-between p-sm bg-surface-container-low rounded-lg">
+                <span class="text-sm text-on-surface-variant">Average Time to Merge</span>
+                <span class="font-label-mono text-primary font-bold">4.2 hours</span>
+              </div>
+              <div class="flex items-center justify-between p-sm bg-surface-container-low rounded-lg">
+                <span class="text-sm text-on-surface-variant">CI Build Pass Rate</span>
+                <span class="font-label-mono text-primary font-bold">96.8%</span>
+              </div>
+              <div class="flex items-center justify-between p-sm bg-surface-container-low rounded-lg">
+                <span class="text-sm text-on-surface-variant">Open Reviews Assigned to You</span>
+                <span class="font-label-mono text-tertiary font-bold" id="assigned-to-me-count">2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface-container rounded-xl p-lg border border-outline-variant">
+            <h3 class="font-headline-sm text-on-surface mb-sm">Merge Checklist</h3>
+            <ul class="text-sm text-on-surface-variant space-y-2">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                All automated CI unit & e2e tests passing
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                At least 1 approval from code owner
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                No unresolved discussion threads
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                Branch is rebased against main
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="devora-core.js"></script>
+<script>
+  let currentPRFilter = 'all';
+  let currentPRSearch = '';
+
+  async function loadAndRenderPRs() {
+    let prs = await Devora.state.api('/pull-requests');
+    if (!Array.isArray(prs)) prs = [];
+
+    // Counts
+    const allCount = prs.length;
+    const reviewCount = prs.filter(p => p.status === 'Needs Review' || p.status === 'Review').length;
+    const approvedCount = prs.filter(p => p.status === 'Approved').length;
+    const draftCount = prs.filter(p => p.status === 'Draft').length;
+    const mergedCount = prs.filter(p => p.status === 'Merged').length;
+
+    document.getElementById('count-all-prs').textContent = allCount;
+    document.getElementById('count-review-prs').textContent = reviewCount;
+    document.getElementById('count-approved-prs').textContent = approvedCount;
+    document.getElementById('count-draft-prs').textContent = draftCount;
+    document.getElementById('count-merged-prs').textContent = mergedCount;
+    document.getElementById('active-pr-badge').textContent = `${allCount - mergedCount} Active`;
+    document.getElementById('assigned-to-me-count').textContent = reviewCount;
+
+    // Filter
+    let filtered = prs;
+    if (currentPRFilter === 'review') filtered = filtered.filter(p => p.status === 'Needs Review' || p.status === 'Review');
+    else if (currentPRFilter === 'approved') filtered = filtered.filter(p => p.status === 'Approved');
+    else if (currentPRFilter === 'draft') filtered = filtered.filter(p => p.status === 'Draft');
+    else if (currentPRFilter === 'merged') filtered = filtered.filter(p => p.status === 'Merged');
+
+    if (currentPRSearch.trim()) {
+      const q = currentPRSearch.trim().toLowerCase();
+      filtered = filtered.filter(p => 
+        (p.title && p.title.toLowerCase().includes(q)) ||
+        (p.repo && p.repo.toLowerCase().includes(q)) ||
+        (p.branch && p.branch.toLowerCase().includes(q))
+      );
+    }
+
+    const activeList = filtered.filter(p => p.status !== 'Merged');
+    const mergedList = filtered.filter(p => p.status === 'Merged');
+
+    const activeContainer = document.getElementById('active-prs-container');
+    const mergedContainer = document.getElementById('merged-prs-container');
+
+    if (activeContainer) {
+      if (activeList.length === 0) {
+        activeContainer.innerHTML = `<div class="p-8 text-center text-outline text-sm">No active pull requests in this view.</div>`;
+      } else {
+        activeContainer.innerHTML = activeList.map(p => renderPRCard(p)).join('');
+      }
+    }
+
+    if (mergedContainer) {
+      if (mergedList.length === 0) {
+        mergedContainer.innerHTML = `<div class="p-6 text-center text-outline text-sm">No recently merged pull requests.</div>`;
+      } else {
+        mergedContainer.innerHTML = mergedList.map(p => renderPRCard(p)).join('');
+      }
+    }
+  }
+
+  function renderPRCard(p) {
+    let ciBadge = `<span class="flex items-center gap-1 text-primary text-xs"><span class="material-symbols-outlined text-[14px]">check</span> CI Passed</span>`;
+    if (p.ciStatus === 'Failed') {
+      ciBadge = `
+        <span class="flex items-center gap-1 text-error text-xs">
+          <span class="material-symbols-outlined text-[14px]">close</span> CI Failed
+          <button onclick="event.stopPropagation(); rerunCI('${p.id}')" class="ml-1 text-[11px] underline text-error hover:text-on-surface">Rerun</button>
+        </span>
+      `;
+    }
+
+    let statusPill = 'bg-surface-dim border-outline-variant text-on-surface-variant';
+    if (p.status === 'Approved') statusPill = 'bg-primary/20 text-primary border-primary/30';
+    if (p.status === 'Needs Review' || p.status === 'Review') statusPill = 'bg-tertiary-container/20 text-tertiary border-tertiary-container/30';
+    if (p.status === 'Merged') statusPill = 'bg-primary/30 text-primary border-primary/40';
+
+    return `
+      <div onclick="openPRDetailModal('${p.id}')" class="p-md hover:bg-surface-container-high transition-colors flex gap-md cursor-pointer group">
+        <div class="pt-sm">
+          <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+            <span class="material-symbols-outlined text-primary text-[14px]">call_merge</span>
+          </div>
+        </div>
+        <div class="flex-1 space-y-sm min-w-0">
+          <div class="flex items-start justify-between gap-2">
+            <div class="min-w-0">
+              <div class="flex items-center gap-sm mb-xs">
+                <span class="font-label-mono text-on-surface-variant text-[11px]">${p.repo}</span>
+                <span class="text-outline-variant text-body-sm">•</span>
+                <span class="font-label-mono text-on-surface-variant text-[11px]">#${p.id}</span>
+                <span class="text-outline-variant text-body-sm">•</span>
+                <span class="font-label-mono text-primary text-[11px] truncate">${p.branch}</span>
+              </div>
+              <h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors truncate">${p.title}</h4>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="border font-label-mono text-[10px] px-sm py-[2px] rounded uppercase tracking-wider ${statusPill}">${p.status}</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-md pt-1">
+            <div class="flex items-center gap-md">
+              <div class="flex items-center gap-xs">
+                <div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[9px] font-bold">
+                  ${p.author ? p.author.substring(0, 2).toUpperCase() : 'ME'}
+                </div>
+                <span class="text-xs text-on-surface-variant">${p.author}</span>
+              </div>
+              <span class="text-xs text-on-surface-variant">${p.updated}</span>
+              ${ciBadge}
+            </div>
+            <div class="flex items-center gap-2" onclick="event.stopPropagation()">
+              ${p.status !== 'Approved' && p.status !== 'Merged' ? `
+                <button onclick="approvePR('${p.id}')" class="px-3 py-1 rounded bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 text-xs font-label-mono flex items-center gap-1 transition-colors">
+                  <span class="material-symbols-outlined text-[14px]">check</span> Approve
+                </button>
+              ` : ''}
+              ${p.status === 'Approved' ? `
+                <button onclick="mergePR('${p.id}')" class="px-3 py-1 rounded bg-primary hover:bg-primary/90 text-on-primary text-xs font-label-mono flex items-center gap-1 transition-opacity">
+                  <span class="material-symbols-outlined text-[14px]">merge</span> Merge PR
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  async function approvePR(id) {
+    await Devora.state.api(`/pull-requests/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ action: 'approve' })
+    });
+    Devora.toast(`PR #${id} approved!`, 'success');
+    loadAndRenderPRs();
+  }
+
+  async function mergePR(id) {
+    await Devora.state.api(`/pull-requests/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ action: 'merge' })
+    });
+    Devora.toast(`PR #${id} merged into main!`, 'success');
+    loadAndRenderPRs();
+  }
+
+  async function rerunCI(id) {
+    Devora.toast(`Triggering CI rerun for PR #${id}...`, 'info');
+    await Devora.state.api(`/pull-requests/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ action: 'rerun_ci' })
+    });
+    setTimeout(() => {
+      Devora.toast(`CI check passed for PR #${id}!`, 'success');
+      loadAndRenderPRs();
+    }, 600);
+  }
+
+  async function openPRDetailModal(prId) {
+    const prs = await Devora.state.api('/pull-requests');
+    const pr = prs.find(p => p.id === prId);
+    if (!pr) return;
+
+    Devora.openModal(`
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-outline-variant pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[22px]">merge</span>
+            <span class="font-label-mono text-primary font-bold text-base">#${pr.id}</span>
+          </div>
+          <span class="px-2 py-0.5 rounded text-xs font-label-mono bg-surface-container-high border border-outline-variant text-on-surface">${pr.status}</span>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h3 class="font-headline-sm text-on-surface">${pr.title}</h3>
+          <div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1 text-xs font-label-mono">
+            <div><span class="text-outline">Repository:</span> <span class="text-on-surface">${pr.repo}</span></div>
+            <div><span class="text-outline">Branch:</span> <span class="text-primary">${pr.branch}</span> &rarr; <span class="text-on-surface">main</span></div>
+            <div><span class="text-outline">Author:</span> <span class="text-on-surface">${pr.author}</span></div>
+            <div><span class="text-outline">CI/CD Pipeline:</span> <span class="${pr.ciStatus === 'Passing' ? 'text-primary' : 'text-error'}">${pr.ciStatus}</span></div>
+            <div><span class="text-outline">Diff Summary:</span> <span class="text-on-surface">${pr.diff || '+142 -38 lines across 3 files'}</span></div>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-outline-variant mt-2">
+            <div class="flex gap-2">
+              ${pr.status !== 'Approved' && pr.status !== 'Merged' ? `
+                <button id="modal-approve-btn" class="px-3 py-2 rounded bg-primary/20 text-primary border border-primary/30 text-xs font-label-mono">Approve</button>
+              ` : ''}
+              ${pr.status === 'Approved' ? `
+                <button id="modal-merge-btn" class="px-4 py-2 rounded bg-primary text-on-primary text-xs font-label-mono">Merge PR</button>
+              ` : ''}
+            </div>
+            <button onclick="Devora.closeModal()" class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface text-sm hover:bg-surface-bright">Close</button>
+          </div>
+        </div>
+      </div>
+    `, (overlay) => {
+      overlay.querySelector('#modal-approve-btn')?.addEventListener('click', () => {
+        approvePR(pr.id);
+        Devora.closeModal();
+      });
+      overlay.querySelector('#modal-merge-btn')?.addEventListener('click', () => {
+        mergePR(pr.id);
+        Devora.closeModal();
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadAndRenderPRs();
+
+    // Search filter
+    document.getElementById('pr-search-input')?.addEventListener('input', (e) => {
+      currentPRSearch = e.target.value;
+      loadAndRenderPRs();
+    });
+
+    // Tab filters
+    const filterTabs = document.querySelectorAll('.pr-filter-tab');
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'font-headline-sm');
+          t.classList.add('bg-surface-container', 'text-on-surface-variant', 'font-body-md');
+        });
+        tab.classList.add('bg-secondary-container', 'text-on-secondary-container', 'font-headline-sm');
+        tab.classList.remove('bg-surface-container', 'text-on-surface-variant', 'font-body-md');
+        currentPRFilter = tab.getAttribute('data-filter');
+        loadAndRenderPRs();
+      });
+    });
+
+    // New PR button
+    document.getElementById('open-new-pr-btn')?.addEventListener('click', () => {
+      Devora.openCreatePRModal(() => {
+        loadAndRenderPRs();
+      });
+    });
+  });
+</script>
+</body></html>

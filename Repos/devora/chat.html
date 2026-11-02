@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Devora AI - Assistant Chat</title><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#aeb9d0", "on-surface": "#dae2fd", "primary-fixed": "#d8e2ff", "on-secondary-fixed-variant": "#3c475a", "on-secondary": "#263143", "primary": "#adc6ff", "on-primary-fixed-variant": "#004395", "on-secondary-fixed": "#111c2d", "error-container": "#93000a", "on-background": "#dae2fd", "outline": "#8c909f", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#723600", "surface-container-highest": "#2d3449", "surface-dim": "#0b1326", "on-primary-container": "#00285d", "secondary-fixed": "#d8e3fb", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-tertiary-fixed": "#311400", "outline-variant": "#424754", "surface-tint": "#adc6ff", "on-tertiary-container": "#461f00", "primary-fixed-dim": "#adc6ff", "tertiary-fixed": "#ffdcc6", "on-primary": "#002e6a", "surface-container": "#171f33", "surface-container-low": "#131b2e", "tertiary-container": "#df7412", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb786", "on-surface-variant": "#c2c6d6", "surface": "#0b1326", "background": "#0b1326", "on-error": "#690005", "tertiary": "#ffb786", "on-tertiary": "#502400", "surface-bright": "#31394d", "secondary": "#bcc7de", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "secondary-container": "#3e495d", "primary-container": "#4d8eff", "on-primary-fixed": "#001a42", "inverse-primary": "#005ac2", "inverse-surface": "#dae2fd", "secondary-fixed-dim": "#bcc7de" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "base": "4px", "lg": "24px", "gutter": "16px", "xs": "4px", "margin-mobile": "16px", "margin-desktop": "32px", "md": "16px", "sm": "8px", "xl": "32px" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-mono": ["JetBrains Mono"], "code-block": ["JetBrains Mono"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container border-r border-outline-variant z-50 flex flex-col">
+  <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-md">
+      <span class="material-symbols-outlined text-[20px]">terminal</span>
+    </div>
+    <span class="font-headline-sm text-on-surface tracking-tight">Devora AI</span>
+  </div>
+  <div class="px-lg mb-lg">
+    <button id="sidebar-new-chat-btn" class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-md px-lg rounded-xl font-headline-sm hover:opacity-90 transition-opacity cursor-pointer">
+      <span class="material-symbols-outlined text-[20px]">add_circle</span>New Chat
+    </button>
+  </div>
+  <nav class="flex-1 overflow-y-auto px-md space-y-xl" data-active-classes="bg-secondary-container text-on-secondary-container font-medium">
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Chat</span>
+      <a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-secondary-container text-on-secondary-container font-medium" data-path="chat" href="chat.html">
+        <span class="material-symbols-outlined mr-sm">smart_toy</span>AI Assistant
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Insights</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined mr-sm">dashboard</span>Dashboard
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-tickets" href="tickets.html">
+        <span class="material-symbols-outlined mr-sm">confirmation_number</span>My Tickets
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pull-requests" href="pull-requests.html">
+        <span class="material-symbols-outlined mr-sm">merge</span>Pull Requests
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="activity" href="activity.html">
+        <span class="material-symbols-outlined mr-sm">switch_account</span>Activity
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Management</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="integrations" href="integrations.html">
+        <span class="material-symbols-outlined mr-sm">extension</span>Integrations
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+        <span class="material-symbols-outlined mr-sm">settings</span>Settings
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-settings" href="api-settings.html">
+        <span class="material-symbols-outlined mr-sm">key</span>API Settings
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-xl">
+    <div class="flex items-center gap-lg">
+      <h1 class="font-headline-sm text-on-surface">Devora AI</h1>
+      <div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+        <div class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+        </div>
+        <span class="text-body-sm text-on-surface-variant">DevOps Agent Online</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-lg">
+      <button onclick="clearChatHistory()" class="text-xs font-label-mono text-outline hover:text-on-surface border border-outline-variant/60 rounded px-2 py-1 transition-colors">
+        Clear History
+      </button>
+      <div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-lg border border-outline-variant text-outline cursor-pointer hover:bg-surface-container-high transition-colors" onclick="Devora.openSearchPalette()">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+        <span class="text-body-md">Search</span>
+        <span class="text-label-mono bg-surface-container px-sm py-[2px] rounded border border-outline-variant ml-md">⌘K</span>
+      </div>
+      <div class="flex items-center gap-md">
+        <div class="relative cursor-pointer p-1 rounded-lg hover:bg-surface-container-high transition-colors" onclick="Devora.toggleNotifications(this)">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="Devora.toggleProfileMenu(this)">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 min-h-screen bg-background">
+    <div class="flex flex-col w-full h-[calc(100vh-64px)] overflow-hidden bg-background">
+      <!-- Chat Area -->
+      <div class="flex-1 overflow-y-auto px-margin-desktop py-xl flex flex-col gap-xl w-full max-w-4xl mx-auto scroll-smooth" id="chat-container">
+        <!-- Welcome Message -->
+        <div class="flex flex-col items-center justify-center py-8 text-center" id="welcome-banner">
+          <div class="w-16 h-16 rounded-2xl bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-lg shadow-md">
+            <span class="material-symbols-outlined text-[32px] text-primary">smart_toy</span>
+          </div>
+          <h2 class="font-display-lg text-on-surface mb-sm tracking-tight">How can I assist?</h2>
+          <p class="font-body-lg text-on-surface-variant max-w-md mx-auto">
+            Query Jira tickets, manage pull requests, inspect builds, or ask technical DevOps questions.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+            <button onclick="sendQuickPrompt('/jira')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-xs font-label-mono text-on-surface border border-outline-variant transition-colors">
+              📋 /jira (My Tickets)
+            </button>
+            <button onclick="sendQuickPrompt('/pr')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-xs font-label-mono text-on-surface border border-outline-variant transition-colors">
+              🔀 /pr (Review Requests)
+            </button>
+            <button onclick="sendQuickPrompt('/standup')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-xs font-label-mono text-on-surface border border-outline-variant transition-colors">
+              🚀 /standup (Daily Standup)
+            </button>
+            <button onclick="sendQuickPrompt('/status')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-xs font-label-mono text-on-surface border border-outline-variant transition-colors">
+              🟢 /status (Health Check)
+            </button>
+          </div>
+        </div>
+
+        <!-- Chat History Messages -->
+        <div class="flex flex-col gap-lg" id="chat-messages-thread">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Typing Indicator (Hidden by default) -->
+        <div class="flex gap-md w-full justify-start pb-4 hidden" id="chat-typing-indicator">
+          <div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center shrink-0 mt-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl rounded-tl-none px-lg py-md border border-outline-variant flex items-center gap-xs">
+            <span class="w-2 h-2 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 0s;"></span>
+            <span class="w-2 h-2 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 0.2s;"></span>
+            <span class="w-2 h-2 rounded-full bg-on-surface-variant animate-bounce" style="animation-delay: 0.4s;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="p-lg bg-surface/90 backdrop-blur-md border-t border-outline-variant z-10 w-full flex justify-center">
+        <div class="w-full max-w-4xl relative">
+          <div class="flex flex-col bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all shadow-lg">
+            <textarea id="chat-user-input" class="w-full bg-transparent text-on-surface placeholder:text-outline font-body-md p-md resize-none focus:outline-none min-h-[56px] max-h-[200px] overflow-y-auto" placeholder="Ask anything about Jira, pull requests, CI/CD, or Kubernetes..." rows="1"></textarea>
+            <div class="flex items-center justify-between px-md py-sm bg-surface-container-highest border-t border-outline-variant/50">
+              <div class="flex items-center gap-xs">
+                <button onclick="sendQuickPrompt('/jira')" type="button" class="font-label-mono text-[11px] text-on-surface-variant hover:text-on-surface px-sm py-[2px] rounded border border-outline-variant/50 bg-surface-container transition-colors cursor-pointer">
+                  /jira
+                </button>
+                <button onclick="sendQuickPrompt('/pr')" type="button" class="font-label-mono text-[11px] text-on-surface-variant hover:text-on-surface px-sm py-[2px] rounded border border-outline-variant/50 bg-surface-container transition-colors cursor-pointer">
+                  /pr
+                </button>
+                <button onclick="sendQuickPrompt('/standup')" type="button" class="font-label-mono text-[11px] text-on-surface-variant hover:text-on-surface px-sm py-[2px] rounded border border-outline-variant/50 bg-surface-container transition-colors cursor-pointer">
+                  /standup
+                </button>
+              </div>
+              <button id="chat-send-btn" class="bg-primary text-on-primary w-8 h-8 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+            </div>
+          </div>
+          <div class="text-center mt-sm">
+            <p class="font-label-mono text-[10px] text-outline">Devora AI DevOps Assistant · Connected to workspace</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="devora-core.js"></script>
+<script>
+  let chatHistory = [];
+
+  function loadChatMessages() {
+    const stored = localStorage.getItem('devora_chat_history');
+    if (stored) {
+      try { chatHistory = JSON.parse(stored); } catch (e) { chatHistory = []; }
+    } else {
+      const state = Devora.state.getLocal();
+      chatHistory = state.chat_messages || [];
+    }
+    renderChatMessages();
+  }
+
+  function saveChatMessages() {
+    localStorage.setItem('devora_chat_history', JSON.stringify(chatHistory));
+  }
+
+  function renderChatMessages() {
+    const thread = document.getElementById('chat-messages-thread');
+    if (!thread) return;
+
+    thread.innerHTML = chatHistory.map(m => {
+      if (m.sender === 'user') {
+        return `
+          <div class="flex gap-md w-full justify-end">
+            <div class="max-w-[85%] md:max-w-[80%] bg-surface-container-highest rounded-2xl rounded-tr-none px-lg py-md border border-outline-variant shadow-sm">
+              <p class="font-body-md text-on-surface whitespace-pre-wrap">${escapeHtml(m.text)}</p>
+              <span class="text-[10px] font-label-mono text-outline block text-right mt-1">${m.timestamp || ''}</span>
+            </div>
+          </div>
+        `;
+      } else {
+        // AI Message
+        let cardsHtml = '';
+        if (m.cards && m.cards.length > 0) {
+          cardsHtml = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-md">
+              ${m.cards.map(c => `
+                <div onclick="window.location.href='tickets.html'" class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex flex-col gap-sm hover:bg-surface-container transition-colors cursor-pointer group">
+                  <div class="flex justify-between items-start">
+                    <span class="font-label-mono text-xs text-primary bg-primary/10 px-sm py-[2px] rounded border border-primary/20">${c.key}</span>
+                    <span class="text-xs font-label-mono text-${c.priority === 'High' ? 'error' : 'tertiary'}">${c.priority}</span>
+                  </div>
+                  <h4 class="font-headline-sm text-sm text-on-surface group-hover:text-primary transition-colors">${c.title}</h4>
+                  <div class="flex justify-between items-center mt-auto pt-sm text-xs text-on-surface-variant">
+                    <span>${c.status}</span>
+                    <span class="text-primary font-medium flex items-center gap-0.5">View &rarr;</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        let tableHtml = '';
+        if (m.table && m.table.length > 0) {
+          tableHtml = `
+            <div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden mt-md">
+              <div class="grid grid-cols-12 gap-sm px-md py-sm bg-surface-container border-b border-outline-variant font-label-mono text-[11px] text-outline uppercase tracking-wider">
+                <div class="col-span-3">Item</div>
+                <div class="col-span-5">Summary</div>
+                <div class="col-span-2">Status</div>
+                <div class="col-span-2 text-right">Details</div>
+              </div>
+              <div class="flex flex-col divide-y divide-outline-variant/30 text-xs">
+                ${m.table.map(row => `
+                  <div class="grid grid-cols-12 gap-sm px-md py-2.5 items-center hover:bg-surface-container transition-colors">
+                    <div class="col-span-3 font-label-mono text-primary">${row.key}</div>
+                    <div class="col-span-5 font-body-sm text-on-surface truncate pr-2">${row.summary}</div>
+                    <div class="col-span-2 text-on-surface-variant">${row.status}</div>
+                    <div class="col-span-2 font-label-mono text-outline text-right">${row.due || ''}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="flex gap-md w-full justify-start pb-2">
+            <div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center shrink-0 mt-xs shadow-sm">
+              <span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
+            </div>
+            <div class="max-w-[90%] md:max-w-[85%] w-full">
+              <div class="bg-surface-container rounded-2xl rounded-tl-none px-lg py-md border border-outline-variant/80 shadow-md">
+                <div class="font-body-md text-on-surface leading-relaxed markdown-body">
+                  ${formatMarkdown(m.text)}
+                </div>
+                ${cardsHtml}
+                ${tableHtml}
+              </div>
+              <span class="text-[10px] font-label-mono text-outline block mt-1 pl-1">${m.timestamp || ''}</span>
+            </div>
+          </div>
+        `;
+      }
+    }).join('');
+
+    scrollToBottom();
+  }
+
+  function escapeHtml(str) {
+    return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function formatMarkdown(text) {
+    if (!text) return '';
+    let html = escapeHtml(text);
+    // Headers
+    html = html.replace(/^### (.*$)/gim, '<h4 class="font-headline-sm text-base text-on-surface font-semibold mt-2 mb-1">$1</h4>');
+    html = html.replace(/^## (.*$)/gim, '<h3 class="font-headline-sm text-lg text-on-surface font-bold mt-3 mb-1">$1</h3>');
+    // Bold
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-primary">$1</strong>');
+    // Inline code
+    html = html.replace(/`(.*?)`/g, '<code class="font-label-mono bg-surface-container-high px-1.5 py-0.5 rounded text-xs border border-outline-variant/50 text-on-surface">$1</code>');
+    // Bullet lists
+    html = html.replace(/^\- (.*$)/gim, '<li class="ml-4 list-disc text-sm text-on-surface">$1</li>');
+    // Line breaks
+    html = html.replace(/\n/g, '<br/>');
+    return html;
+  }
+
+  function scrollToBottom() {
+    const container = document.getElementById('chat-container');
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chat-user-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    input.style.height = '';
+
+    const userMsg = {
+      id: 'm-' + Date.now(),
+      sender: 'user',
+      text: text,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    chatHistory.push(userMsg);
+    renderChatMessages();
+
+    // Show typing indicator
+    const indicator = document.getElementById('chat-typing-indicator');
+    if (indicator) indicator.classList.remove('hidden');
+    scrollToBottom();
+
+    try {
+      const response = await Devora.state.api('/chat', {
+        method: 'POST',
+        body: JSON.stringify({ message: text })
+      });
+
+      if (indicator) indicator.classList.add('hidden');
+
+      const aiMsg = {
+        id: 'm-' + (Date.now() + 1),
+        sender: 'ai',
+        text: response.text || 'I received your message.',
+        cards: response.cards || [],
+        table: response.table || [],
+        timestamp: response.timestamp || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+
+      chatHistory.push(aiMsg);
+      saveChatMessages();
+      renderChatMessages();
+    } catch (e) {
+      if (indicator) indicator.classList.add('hidden');
+      Devora.toast('Chat response error', 'error');
+    }
+  }
+
+  function sendQuickPrompt(cmd) {
+    const input = document.getElementById('chat-user-input');
+    if (input) {
+      input.value = cmd;
+      sendMessage();
+    }
+  }
+
+  function clearChatHistory() {
+    if (confirm('Clear current chat conversation?')) {
+      chatHistory = [];
+      saveChatMessages();
+      renderChatMessages();
+      Devora.toast('Chat history cleared', 'info');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadChatMessages();
+
+    const input = document.getElementById('chat-user-input');
+    const sendBtn = document.getElementById('chat-send-btn');
+    const newChatBtn = document.getElementById('sidebar-new-chat-btn');
+
+    sendBtn?.addEventListener('click', sendMessage);
+
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    newChatBtn?.addEventListener('click', clearChatHistory);
+  });
+</script>
+</body></html>

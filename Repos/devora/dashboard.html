@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Devora AI - Dashboard</title><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#aeb9d0", "on-surface": "#dae2fd", "primary-fixed": "#d8e2ff", "on-secondary-fixed-variant": "#3c475a", "on-secondary": "#263143", "primary": "#adc6ff", "on-primary-fixed-variant": "#004395", "on-secondary-fixed": "#111c2d", "error-container": "#93000a", "on-background": "#dae2fd", "outline": "#8c909f", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#723600", "surface-container-highest": "#2d3449", "surface-dim": "#0b1326", "on-primary-container": "#00285d", "secondary-fixed": "#d8e3fb", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-tertiary-fixed": "#311400", "outline-variant": "#424754", "surface-tint": "#adc6ff", "on-tertiary-container": "#461f00", "primary-fixed-dim": "#adc6ff", "tertiary-fixed": "#ffdcc6", "on-primary": "#002e6a", "surface-container": "#171f33", "surface-container-low": "#131b2e", "tertiary-container": "#df7412", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb786", "on-surface-variant": "#c2c6d6", "surface": "#0b1326", "background": "#0b1326", "on-error": "#690005", "tertiary": "#ffb786", "on-tertiary": "#502400", "surface-bright": "#31394d", "secondary": "#bcc7de", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "secondary-container": "#3e495d", "primary-container": "#4d8eff", "on-primary-fixed": "#001a42", "inverse-primary": "#005ac2", "inverse-surface": "#dae2fd", "secondary-fixed-dim": "#bcc7de" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "base": "4px", "lg": "24px", "gutter": "16px", "xs": "4px", "margin-mobile": "16px", "margin-desktop": "32px", "md": "16px", "sm": "8px", "xl": "32px" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-mono": ["JetBrains Mono"], "code-block": ["JetBrains Mono"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container border-r border-outline-variant z-50 flex flex-col">
+  <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-md">
+      <span class="material-symbols-outlined text-[20px]">terminal</span>
+    </div>
+    <span class="font-headline-sm text-on-surface tracking-tight">Devora AI</span>
+  </div>
+  <div class="px-lg mb-lg">
+    <a href="chat.html" class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-md px-lg rounded-xl font-headline-sm hover:opacity-90 transition-opacity">
+      <span class="material-symbols-outlined text-[20px]">add_circle</span>New Chat
+    </a>
+  </div>
+  <nav class="flex-1 overflow-y-auto px-md space-y-xl" data-active-classes="bg-secondary-container text-on-secondary-container font-medium">
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Chat</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="chat" href="chat.html">
+        <span class="material-symbols-outlined mr-sm">smart_toy</span>AI Assistant
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Insights</span>
+      <a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-secondary-container text-on-secondary-container font-medium" data-path="dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined mr-sm">dashboard</span>Dashboard
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-tickets" href="tickets.html">
+        <span class="material-symbols-outlined mr-sm">confirmation_number</span>My Tickets
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pull-requests" href="pull-requests.html">
+        <span class="material-symbols-outlined mr-sm">merge</span>Pull Requests
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="activity" href="activity.html">
+        <span class="material-symbols-outlined mr-sm">switch_account</span>Activity
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Management</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="integrations" href="integrations.html">
+        <span class="material-symbols-outlined mr-sm">extension</span>Integrations
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+        <span class="material-symbols-outlined mr-sm">settings</span>Settings
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-settings" href="api-settings.html">
+        <span class="material-symbols-outlined mr-sm">key</span>API Settings
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-xl">
+    <div class="flex items-center gap-lg">
+      <h1 class="font-headline-sm text-on-surface">Devora AI</h1>
+      <div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+        <div class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+        </div>
+        <span class="text-body-sm text-on-surface-variant">All systems connected</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-lg">
+      <div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-lg border border-outline-variant text-outline cursor-pointer hover:bg-surface-container-high transition-colors" onclick="Devora.openSearchPalette()">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+        <span class="text-body-md">Search</span>
+        <span class="text-label-mono bg-surface-container px-sm py-[2px] rounded border border-outline-variant ml-md">⌘K</span>
+      </div>
+      <div class="flex items-center gap-md">
+        <div class="relative cursor-pointer p-1 rounded-lg hover:bg-surface-container-high transition-colors" onclick="Devora.toggleNotifications(this)">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="Devora.toggleProfileMenu(this)">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 min-h-screen bg-background">
+    <div class="flex flex-col w-full p-lg gap-lg">
+      <div class="grid grid-cols-12 gap-lg">
+        <!-- Left Column: Primary Metrics -->
+        <div class="col-span-12 xl:col-span-8 flex flex-col gap-lg">
+          <!-- Top Row KPI Cards - Bento Style -->
+          <div class="grid grid-cols-12 gap-gutter">
+            <!-- Open Tickets -->
+            <div onclick="window.location.href='tickets.html'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer relative overflow-hidden group">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">My Open Tickets</span>
+                <span class="material-symbols-outlined text-outline">confirmation_number</span>
+              </div>
+              <div class="mt-xl z-10">
+                <span id="stat-open-tickets" class="text-display-lg font-display-lg text-on-surface group-hover:-translate-y-1 transition-transform inline-block">12</span>
+              </div>
+              <div class="absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 opacity-10 bg-primary w-32 h-32 rounded-full blur-2xl"></div>
+            </div>
+
+            <!-- High Priority -->
+            <div onclick="window.location.href='tickets.html?priority=High'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between relative overflow-hidden cursor-pointer hover:bg-surface-container-high transition-colors">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">High Priority</span>
+                <span class="material-symbols-outlined text-error">warning</span>
+              </div>
+              <div class="mt-xl flex items-center gap-md z-10">
+                <span id="stat-high-priority" class="text-display-lg font-display-lg text-error">3</span>
+                <span class="px-sm py-xs bg-error-container text-on-error-container rounded-full text-label-mono font-label-mono flex items-center gap-xs">
+                  <span class="w-1.5 h-1.5 bg-error rounded-full animate-pulse"></span>Action Req
+                </span>
+              </div>
+            </div>
+
+            <!-- In Progress -->
+            <div onclick="window.location.href='tickets.html?status=In Progress'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between relative overflow-hidden cursor-pointer hover:bg-surface-container-high transition-colors">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">In Progress</span>
+                <span class="material-symbols-outlined text-tertiary">sync</span>
+              </div>
+              <div class="mt-xl z-10">
+                <span id="stat-in-progress" class="text-display-lg font-display-lg text-tertiary">5</span>
+              </div>
+            </div>
+
+            <!-- Pull Requests -->
+            <div onclick="window.location.href='pull-requests.html'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer relative overflow-hidden group">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">Pull Requests</span>
+                <span class="material-symbols-outlined text-outline">merge</span>
+              </div>
+              <div class="mt-xl z-10">
+                <span id="stat-pull-requests" class="text-display-lg font-display-lg text-on-surface group-hover:-translate-y-1 transition-transform inline-block">6</span>
+              </div>
+              <div class="absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 opacity-10 bg-secondary w-32 h-32 rounded-full blur-2xl"></div>
+            </div>
+
+            <!-- Pending Reviews -->
+            <div onclick="window.location.href='pull-requests.html'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between relative overflow-hidden cursor-pointer hover:bg-surface-container-high transition-colors">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">Pending Reviews</span>
+                <span class="material-symbols-outlined text-tertiary-container">rule</span>
+              </div>
+              <div class="mt-xl flex items-center gap-md z-10">
+                <span id="stat-pending-reviews" class="text-display-lg font-display-lg text-tertiary-container">2</span>
+                <span class="px-sm py-xs bg-tertiary-container/20 text-tertiary-fixed rounded-full text-label-mono font-label-mono flex items-center gap-xs">
+                  <span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>Awaiting
+                </span>
+              </div>
+            </div>
+
+            <!-- Done This Week -->
+            <div onclick="window.location.href='tickets.html?status=Done'" class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-md flex flex-col justify-between relative overflow-hidden cursor-pointer hover:bg-surface-container-high transition-colors">
+              <div class="flex justify-between items-start z-10">
+                <span class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">Done (Wk)</span>
+                <span class="material-symbols-outlined text-primary">check_circle</span>
+              </div>
+              <div class="mt-xl z-10">
+                <span id="stat-done" class="text-display-lg font-display-lg text-primary">8</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jira Ticket Status - Data Vis -->
+          <div class="bg-surface-container rounded-xl p-lg flex flex-col gap-md relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <h2 class="text-headline-md font-headline-md text-on-surface">Ticket Status Distribution</h2>
+              <button onclick="Devora.openCreateTicketModal(() => renderDashboard())" class="flex items-center gap-xs text-xs font-label-mono text-primary hover:underline bg-primary/10 px-sm py-xs rounded">
+                <span class="material-symbols-outlined text-[16px]">add</span> New Ticket
+              </button>
+            </div>
+            <div class="flex flex-col gap-xs mt-sm">
+              <div class="w-full h-4 rounded-full bg-surface flex overflow-hidden">
+                <div id="bar-todo" class="h-full bg-error transition-all duration-500" style="width: 25%"></div>
+                <div id="bar-inprog" class="h-full bg-tertiary transition-all duration-500" style="width: 40%"></div>
+                <div id="bar-done" class="h-full bg-primary transition-all duration-500" style="width: 35%"></div>
+              </div>
+              <div class="flex justify-between text-label-mono font-label-mono text-on-surface-variant mt-xs">
+                <div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-error"></span> <span id="label-todo">To Do (25%)</span></div>
+                <div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span> <span id="label-inprog">In Progress (40%)</span></div>
+                <div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-primary"></span> <span id="label-done">Done (35%)</span></div>
+              </div>
+            </div>
+            <div class="mt-md space-y-2" id="critical-tickets-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Pull Request Activity Table -->
+          <div class="bg-surface-container rounded-xl flex flex-col relative overflow-hidden">
+            <div class="p-lg border-b border-outline-variant/50 flex items-center justify-between">
+              <h2 class="text-headline-md font-headline-md text-on-surface">Recent Pull Requests</h2>
+              <a href="pull-requests.html" class="text-sm font-label-mono text-primary hover:underline flex items-center gap-xs">
+                View all <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-low text-label-mono font-label-mono text-outline uppercase tracking-wider">
+                    <th class="p-md font-medium">PR Name / Branch</th>
+                    <th class="p-md font-medium hidden sm:table-cell">Repo</th>
+                    <th class="p-md font-medium hidden md:table-cell">Author</th>
+                    <th class="p-md font-medium">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="text-body-md font-body-md text-on-surface" id="dashboard-pr-table">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Context & Activity -->
+        <div class="col-span-12 xl:col-span-4 flex flex-col gap-lg">
+          <!-- Sprint Progress Ring -->
+          <div class="bg-surface-container rounded-xl p-lg flex flex-col items-center justify-center relative overflow-hidden">
+            <h3 class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest w-full text-left mb-lg">Sprint 42 Progress</h3>
+            <div class="relative w-48 h-48 flex items-center justify-center">
+              <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <circle class="stroke-surface-container-high" cx="50" cy="50" fill="none" r="45" stroke-width="8"></circle>
+                <circle id="sprint-progress-circle" class="stroke-primary transition-all duration-700" cx="50" cy="50" fill="none" r="45" stroke-dasharray="283" stroke-dashoffset="79.24" stroke-linecap="round" stroke-width="8"></circle>
+              </svg>
+              <div class="flex flex-col items-center z-10 text-center">
+                <span id="sprint-percent-text" class="text-display-lg font-display-lg text-on-surface leading-none">72<span class="text-headline-md">%</span></span>
+                <span class="text-label-mono font-label-mono text-primary mt-1">Complete</span>
+              </div>
+            </div>
+            <div class="w-full flex justify-between mt-lg px-md text-body-sm font-body-sm text-on-surface-variant">
+              <span>3 days remaining</span>
+              <span>Ends Friday</span>
+            </div>
+          </div>
+
+          <!-- Upcoming Deadlines -->
+          <div class="bg-surface-container rounded-xl p-md flex flex-col">
+            <h3 class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest mb-md px-sm">Due Soon</h3>
+            <div class="space-y-sm" id="due-soon-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Recent Bitbucket Commits -->
+          <div class="bg-surface-container rounded-xl flex flex-col flex-1 min-h-[300px]">
+            <div class="p-md border-b border-outline-variant/50 sticky top-0 bg-surface-container z-10 flex items-center justify-between">
+              <h3 class="text-body-md font-body-md text-on-surface-variant uppercase tracking-widest">Recent Commits</h3>
+              <span class="material-symbols-outlined text-outline text-[18px]">history</span>
+            </div>
+            <div class="p-md flex flex-col gap-md overflow-y-auto" id="recent-commits-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="devora-core.js"></script>
+<script>
+  async function renderDashboard() {
+    // 1. Fetch Stats
+    const stats = await Devora.state.api('/stats');
+    if (stats) {
+      document.getElementById('stat-open-tickets').textContent = stats.openTicketsCount ?? 12;
+      document.getElementById('stat-high-priority').textContent = stats.highPriorityCount ?? 3;
+      document.getElementById('stat-in-progress').textContent = stats.inProgressCount ?? 5;
+      document.getElementById('stat-pull-requests').textContent = stats.pullRequestsCount ?? 6;
+      document.getElementById('stat-pending-reviews').textContent = stats.pendingReviewsCount ?? 2;
+      document.getElementById('stat-done').textContent = stats.doneCount ?? 8;
+
+      if (stats.distribution) {
+        document.getElementById('bar-todo').style.width = stats.distribution.todo + '%';
+        document.getElementById('bar-inprog').style.width = stats.distribution.inProgress + '%';
+        document.getElementById('bar-done').style.width = stats.distribution.done + '%';
+
+        document.getElementById('label-todo').textContent = `To Do (${stats.distribution.todo}%)`;
+        document.getElementById('label-inprog').textContent = `In Progress (${stats.distribution.inProgress}%)`;
+        document.getElementById('label-done').textContent = `Done (${stats.distribution.done}%)`;
+      }
+
+      if (stats.sprintProgress) {
+        const pct = stats.sprintProgress.percent;
+        document.getElementById('sprint-percent-text').innerHTML = `${pct}<span class="text-headline-md">%</span>`;
+        const offset = 283 - (283 * (pct / 100));
+        document.getElementById('sprint-progress-circle').setAttribute('stroke-dashoffset', offset);
+      }
+    }
+
+    // 2. Fetch Tickets for Critical List
+    const tickets = await Devora.state.api('/tickets');
+    const criticalContainer = document.getElementById('critical-tickets-list');
+    if (criticalContainer && Array.isArray(tickets)) {
+      const topItems = tickets.slice(0, 3);
+      criticalContainer.innerHTML = topItems.map(t => {
+        const pColor = t.priority === 'High' ? 'text-error bg-error-container/20 border-error/30' : 'text-tertiary bg-tertiary-container/20 border-tertiary/30';
+        return `
+          <div onclick="window.location.href='tickets.html'" class="flex justify-between items-center py-sm border-b border-outline-variant/30 hover:bg-surface-container-high px-sm rounded -mx-sm transition-colors cursor-pointer">
+            <span class="text-code-block font-code-block text-on-surface truncate pr-2">${t.id}: ${t.summary}</span>
+            <span class="text-label-mono font-label-mono ${pColor} px-xs py-0.5 rounded border text-[11px] shrink-0">${t.priority.toUpperCase()}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 3. Fetch PRs for Dashboard PR Table
+    const prs = await Devora.state.api('/pull-requests');
+    const prTable = document.getElementById('dashboard-pr-table');
+    if (prTable && Array.isArray(prs)) {
+      prTable.innerHTML = prs.slice(0, 4).map(p => {
+        let badgeColor = 'bg-surface-bright text-on-surface-variant border-outline-variant';
+        let dotColor = 'bg-outline';
+        if (p.status === 'Approved') { badgeColor = 'bg-primary/20 text-primary border-primary/20'; dotColor = 'bg-primary'; }
+        else if (p.status.includes('Review')) { badgeColor = 'bg-tertiary-container/20 text-tertiary border-tertiary/20'; dotColor = 'bg-tertiary'; }
+        else if (p.status === 'Merged') { badgeColor = 'bg-primary/30 text-primary border-primary/40'; dotColor = 'bg-primary'; }
+
+        return `
+          <tr onclick="window.location.href='pull-requests.html'" class="border-b border-outline-variant/30 hover:bg-surface-container-high transition-colors group cursor-pointer">
+            <td class="p-md">
+              <div class="flex flex-col">
+                <span class="font-medium group-hover:text-primary transition-colors">${p.title}</span>
+                <span class="text-label-mono font-label-mono text-on-surface-variant mt-0.5">#${p.id} · <span class="material-symbols-outlined text-[14px] align-middle">call_split</span> ${p.branch}</span>
+              </div>
+            </td>
+            <td class="p-md hidden sm:table-cell text-on-surface-variant">${p.repo}</td>
+            <td class="p-md hidden md:table-cell text-on-surface-variant">
+              <div class="flex items-center gap-xs">
+                <div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">
+                  ${p.author ? p.author.substring(0, 2).toUpperCase() : 'ME'}
+                </div>
+                <span>${p.author || 'alex.chen'}</span>
+              </div>
+            </td>
+            <td class="p-md">
+              <span class="inline-flex items-center gap-xs px-sm py-1 rounded-full text-label-mono font-label-mono border ${badgeColor}">
+                <span class="w-1.5 h-1.5 rounded-full ${dotColor}"></span> ${p.status}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // 4. Due Soon
+    const dueSoonContainer = document.getElementById('due-soon-list');
+    if (dueSoonContainer && Array.isArray(tickets)) {
+      const dueItems = tickets.filter(t => t.status !== 'Done').slice(0, 2);
+      dueSoonContainer.innerHTML = dueItems.map((t, idx) => {
+        const isUrgent = idx === 0;
+        return `
+          <div onclick="window.location.href='tickets.html'" class="bg-surface-container-low p-sm rounded-lg flex items-start gap-md border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer">
+            <div class="w-10 h-10 rounded ${isUrgent ? 'bg-error-container/20 text-error' : 'bg-tertiary-container/20 text-tertiary'} flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">${isUrgent ? 'event_busy' : 'event'}</span>
+            </div>
+            <div class="flex flex-col flex-1 min-w-0">
+              <span class="text-body-md font-body-md text-on-surface truncate">${t.summary}</span>
+              <div class="flex justify-between items-center mt-0.5">
+                <span class="text-label-mono font-label-mono text-on-surface-variant">${t.id}</span>
+                <span class="text-label-mono font-label-mono ${isUrgent ? 'text-error font-medium' : 'text-tertiary'}">${t.dueDate || 'Soon'}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 5. Recent Commits
+    const commitsContainer = document.getElementById('recent-commits-list');
+    const state = Devora.state.getLocal();
+    const commits = state.commits || [];
+    if (commitsContainer && commits.length > 0) {
+      commitsContainer.innerHTML = commits.slice(0, 3).map((c, idx) => `
+        <div class="flex gap-md relative">
+          ${idx < 2 ? '<div class="w-px bg-outline-variant absolute left-[15px] top-[30px] bottom-[-20px] z-0"></div>' : ''}
+          <div class="w-8 h-8 rounded-full bg-surface-bright flex items-center justify-center shrink-0 z-10 border border-outline-variant">
+            <span class="material-symbols-outlined text-[16px] text-on-surface-variant">commit</span>
+          </div>
+          <div class="flex flex-col flex-1 min-w-0 pb-md">
+            <span class="text-body-md font-body-md text-on-surface truncate">${c.message}</span>
+            <div class="flex items-center gap-xs mt-1 text-label-mono font-label-mono text-on-surface-variant">
+              <span class="bg-surface-container-low px-xs py-0.5 rounded border border-outline-variant/30 truncate max-w-[120px]">${c.repo}</span>
+              <span>·</span>
+              <span>${c.time}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderDashboard();
+  });
+</script>
+</body></html>

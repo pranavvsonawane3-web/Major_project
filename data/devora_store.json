@@ -1,0 +1,654 @@
+{
+  "user": {
+    "name": "Alex Chen",
+    "email": "alex.chen@systemcore.dev",
+    "role": "Senior DevOps Engineer",
+    "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+    "department": "Platform Infrastructure",
+    "status": "online"
+  },
+  "tickets": [
+    {
+      "id": "PROJ-4102",
+      "summary": "Automated verification TIcket",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "dueDate": "Tomorrow",
+      "repo": "test-repo",
+      "description": "Automated verification ticket",
+      "createdAt": "2026-09-26T08:47:56.689712+00:00"
+    },
+    {
+      "id": "PROJ-4101",
+      "summary": "Automated verification ticket",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "dueDate": "Tomorrow",
+      "repo": "test-repo",
+      "description": "Automated verification ticket",
+      "createdAt": "2026-09-26T08:47:20.135642+00:00"
+    },
+    {
+      "id": "PROJ-452",
+      "summary": "Implement OAuth flow for third-party integrations",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 24",
+      "repo": "core-auth-service",
+      "description": "Allow single sign-on with Google, GitHub, and Bitbucket using OAuth2 PKCE flow. Configure callback redirection and token refresh policies.",
+      "createdAt": "2026-10-15T09:30:00Z"
+    },
+    {
+      "id": "PROJ-489",
+      "summary": "Fix race condition in worker pool shutdown",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAUWstI5Tvq10P6v1OgeRPY96Bq6p2maq18gcsxmsU8dqjklyDvIWrRWtMdlz6wjQoJhviKwCJ25GNsnMRhGeeFamDVKvmW158S2XSTdxtGP0x0_PTmsGESFCdDx5HIx01nVuE59XyVMWtyplaaLbiWE3Dee23LdrpbLT6eYAq4rv9olUQDq_bm1peiaDQ1gVl7R-fOoW9V8qT0YSwHmjNrbzF3rerrQRX1Tt9p5dqoZLMmOcxoeI5JMg",
+      "dueDate": "Oct 22",
+      "repo": "data-pipeline-go",
+      "description": "Gracefully drain task channel on SIGTERM signal without dropping active batch transactions.",
+      "createdAt": "2026-10-16T11:20:00Z"
+    },
+    {
+      "id": "SYS-4092",
+      "summary": "Investigate high latency on core auth service",
+      "priority": "High",
+      "status": "To Do",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 20",
+      "repo": "core-auth-service",
+      "description": "p99 latency spikes during JWT signature verification under peak traffic hours. Analyze Redis cache hits.",
+      "createdAt": "2026-10-18T14:15:00Z"
+    },
+    {
+      "id": "UI-883",
+      "summary": "Refactor notification dropdown component",
+      "priority": "Med",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcWalIp5gBWWzQubn7vXC5ldg0ZlJ-AJAMHLt3rwFozk7qILgoDP1h2nC-hGE3UzuRsiq4z-puJ_smdQUNdT_9txVgsj-PvWqx3icY3ZQFXwyBrz_5ahrPlqs_aqww5z1uUSkOeE4z-STf9ae5sTrCtTnBna2V2wP19psft4jITWYXef0zanMtUzlM5YYtwiWVXu3Ripr5QhjGd3JN4pGLwWKQXEOskbb0WmTbw4u1tUKJJUB72ca0RA",
+      "dueDate": "Oct 25",
+      "repo": "frontend-webapp",
+      "description": "Improve keyboard navigation, ARIA attributes, and smooth CSS transitions on open/close.",
+      "createdAt": "2026-10-17T08:45:00Z"
+    },
+    {
+      "id": "DB-102",
+      "summary": "Add index to user_sessions table",
+      "priority": "Low",
+      "status": "To Do",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuDbvbMXTrcAjmmoTAS5OVRV5ZWU-mtTQqvrBZAjSOnyQi5B_7IqmJdnFxDzYrmf39K0lod4pI2SPzxtlRyNx-mMxLYh0OEdOezxiCswahAQpfUANmltp7X9fotaCq6DUm1S_3HxZiGgWym4dHd-YblGZQGdCVapsOz4FA8HZgRKRzLv9vK9J2sd49z1Y5aMH-u_cvhuGTqdUz0va1BkuEwXxqwtgc8Sd3-hEKxRroMOLRBd501jAo-KdA",
+      "dueDate": "Oct 28",
+      "repo": "database-migrations",
+      "description": "Create composite B-tree index on (user_id, expires_at) for efficient session garbage collection.",
+      "createdAt": "2026-10-18T16:00:00Z"
+    },
+    {
+      "id": "SYS-4100",
+      "summary": "Finalize API Contract for Microservices",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 26",
+      "repo": "api-gateway",
+      "description": "Align OpenAPI 3.1 specifications across billing, auth, and analytics services.",
+      "createdAt": "2026-10-19T10:10:00Z"
+    },
+    {
+      "id": "DEVOPS-99",
+      "summary": "Deploy RC to Staging",
+      "priority": "Med",
+      "status": "Review",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 27",
+      "repo": "infra-k8s",
+      "description": "Deploy Helm chart release 2.4.0-rc3 to the European staging cluster for QA validation.",
+      "createdAt": "2026-10-19T11:45:00Z"
+    },
+    {
+      "id": "AUTH-442",
+      "summary": "Implement OAuth2 refresh token rotation mechanism",
+      "priority": "High",
+      "status": "Done",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 18",
+      "repo": "core-auth-service",
+      "description": "Revoke previous refresh tokens upon reuse detection to prevent replay attacks.",
+      "createdAt": "2026-10-14T09:00:00Z"
+    },
+    {
+      "id": "CORE-891",
+      "summary": "Refactor user session caching strategy in Redis cluster",
+      "priority": "Med",
+      "status": "Done",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 19",
+      "repo": "cache-service",
+      "description": "Use Redis hash structures instead of raw JSON strings to minimize memory footprint by 35%.",
+      "createdAt": "2026-10-14T14:30:00Z"
+    },
+    {
+      "id": "PROJ-124",
+      "summary": "Implement rate limiting middleware",
+      "priority": "Med",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 24",
+      "repo": "api-gateway",
+      "description": "Token bucket algorithm with Redis backend supporting per-tenant tier limits.",
+      "createdAt": "2026-10-17T13:00:00Z"
+    },
+    {
+      "id": "PROJ-189",
+      "summary": "Update dependencies for core runner",
+      "priority": "Low",
+      "status": "To Do",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH68annOy1Y4zu0QzWUzEVsb7q5vtVwYPT5SIH6sK-bUPuM_SLSEET79J7MVVb15pQedAa5-mKri3mwcpJ8fO4oPdY5c1wSZR8XdJbUEH2xzfKxN5WnK7e9KcV1OQO75xT9i5ECaVGM4S8Z0bLsi9PGdqo-M94YoOKlpgIOpTZg9k9dCshZog3--1kNmaI_cUwB88lOcO53XWHgL4w9qrTy_GByR4NYsx5P1lSQP6JPsfBQXVsSXSeg",
+      "dueDate": "Oct 29",
+      "repo": "runner-core",
+      "description": "Bump Go dependencies to latest security patches and run vulnerability scan.",
+      "createdAt": "2026-10-18T10:00:00Z"
+    },
+    {
+      "id": "PROJ-201",
+      "summary": "Fix UI inconsistency on mobile nav",
+      "priority": "Med",
+      "status": "Review",
+      "assignee": "Alex Chen",
+      "assigneeAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcWalIp5gBWWzQubn7vXC5ldg0ZlJ-AJAMHLt3rwFozk7qILgoDP1h2nC-hGE3UzuRsiq4z-puJ_smdQUNdT_9txVgsj-PvWqx3icY3ZQFXwyBrz_5ahrPlqs_aqww5z1uUSkOeE4z-STf9ae5sTrCtTnBna2V2wP19psft4jITWYXef0zanMtUzlM5YYtwiWVXu3Ripr5QhjGd3JN4pGLwWKQXEOskbb0WmTbw4u1tUKJJUB72ca0RA",
+      "dueDate": "Oct 26",
+      "repo": "frontend-webapp",
+      "description": "Ensure drawer closes smoothly when clicking outside or selecting any navigation link.",
+      "createdAt": "2026-10-17T15:20:00Z"
+    }
+  ],
+  "pull_requests": [
+    {
+      "id": "4895",
+      "title": "feat(test): automated test PR",
+      "repo": "core-backend",
+      "branch": "feature/automated-test",
+      "targetBranch": "main",
+      "author": "alex.chen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "status": "Approved",
+      "ciStatus": "Passing",
+      "updated": "Just now",
+      "reviewers": [
+        "sarah.j",
+        "ME"
+      ],
+      "commentsCount": 0,
+      "diff": "+64 -12 lines across 2 files"
+    },
+    {
+      "id": "4894",
+      "title": "feat(test): automated test PR",
+      "repo": "core-backend",
+      "branch": "feature/automated-test",
+      "targetBranch": "main",
+      "author": "alex.chen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "status": "Approved",
+      "ciStatus": "Passing",
+      "updated": "Just now",
+      "reviewers": [
+        "sarah.j",
+        "ME"
+      ],
+      "commentsCount": 0,
+      "diff": "+64 -12 lines across 2 files"
+    },
+    {
+      "id": "4893",
+      "title": "feat(test): automated test PR",
+      "repo": "core-backend",
+      "branch": "feature/automated-test",
+      "targetBranch": "main",
+      "author": "alex.chen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "status": "Approved",
+      "ciStatus": "Passing",
+      "updated": "Just now",
+      "reviewers": [
+        "sarah.j",
+        "ME"
+      ],
+      "commentsCount": 0,
+      "diff": "+64 -12 lines across 2 files"
+    },
+    {
+      "id": "4892",
+      "title": "Implement new virtual scrolling strategy for datagrid",
+      "repo": "frontend-core",
+      "branch": "feature/virtual-scroll",
+      "targetBranch": "main",
+      "author": "alex.chen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuALoBcdx0YF2eEmozvSB0XEcvr9dH4GaqYGS-12bySvwMGOjIMXD5z0xqutWDQ4rBeZsJGIfYFIiZdMT2nIAWR7mKZC5j87OoA3V_baoMrLX6uJxpAKtED033rkaccopjYo5iJ0f1jnHffV2mNEhsfhM2PiBnxYCiwKoTq50LTAiY_Y6ovAnUpoir4VAG8xhE7EGkpy5pjM5prdzMq5aY-zILO-gqDFc9wp3RMwg59LZi-ycxXGqiOqEA",
+      "status": "Needs Review",
+      "ciStatus": "Failed",
+      "updated": "2h ago",
+      "reviewers": [
+        "sarah.j",
+        "ME"
+      ],
+      "commentsCount": 4,
+      "diff": "+142 -38 lines across 3 files"
+    },
+    {
+      "id": "112",
+      "title": "WIP: Migrate to generic OAuth2 provider interface",
+      "repo": "auth-service",
+      "branch": "refactor/oauth2-provider",
+      "targetBranch": "main",
+      "author": "sarah.j",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuA8pYTKaiWkEZgeWwQUt6yBIJKcFgjAvx0ZPWu4Z6pDoSX0K8-4mbOc20ew2cnSxgls_8ZaA5ImJMJPcrc36w4rp45vaAgslXu86Q3NLhkKVQqmB-dOZ8L5g6mNfo2yyXPbmGXTTfjHnntHD6lJpmss4g2ijDbLlqAEuj1jjjL_pbx8lVytuFASa2Hm-olxJjkDx1kfnH73A44vU4TxJi3ihFow7Q9N7NmLn3PP6bGyRMplJ7hPjX-oJQ",
+      "status": "Draft",
+      "ciStatus": "Passing",
+      "updated": "4h ago",
+      "reviewers": [
+        "ME"
+      ],
+      "commentsCount": 1,
+      "diff": "+210 -95 lines across 5 files"
+    },
+    {
+      "id": "492",
+      "title": "feat: impl oauth2 flow",
+      "repo": "core-auth-service",
+      "branch": "feature/oauth-login",
+      "targetBranch": "develop",
+      "author": "jsmith",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-Uw7ZRHt40yJHJPfMqcg32FuGjqSbL8pQ1aOWbboiVZjlw8KwFy6sIPGVMMfNMLRpSxOHkydY91LhcBxN61_yojkVOHqhmSQF9WlHsiUUkj6WWwYoRkt4ig9jg9KHiC7bTcmGtDF4812UliPeEoMpUuR76Wupz1_R0afR8YNm0ky8uWTIdCV4LLXBotQcZfSKj5nnmPMWPazA7XWQjpPNT4_h4OVUX86RT1R9jlTv84xTPTmrFrh--A",
+      "status": "Review",
+      "ciStatus": "Passing",
+      "updated": "1d ago",
+      "reviewers": [
+        "ME",
+        "alex.chen"
+      ],
+      "commentsCount": 3,
+      "diff": "+384 -22 lines across 8 files"
+    },
+    {
+      "id": "811",
+      "title": "fix: race condition in worker pool",
+      "repo": "data-pipeline-go",
+      "branch": "bugfix/worker-race",
+      "targetBranch": "main",
+      "author": "alee",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuDE2mvuGiKzzA3DAZt28E38X1IiskBYY7ONnbWzlvEw2msYa63FTavAn12a9ox9KDWhGkD_5yqzViMY8_XQ1wXuOE7UbXbTwHXKar-qe6e2cb79iyN078o0mcifw_zszdc2Rcu-_w7wOVKbZ8_n1mhowoLYJQUIaZKvugvFG_mCK5EVgATibmQcNh6zzcJ1Zwd6_GsCBFasPu_o2mZe83Hzg7Q0RC1tjID_HDKATohwUUBxvbNf-i86vA",
+      "status": "Approved",
+      "ciStatus": "Passing",
+      "updated": "2d ago",
+      "reviewers": [
+        "alex.chen"
+      ],
+      "commentsCount": 6,
+      "diff": "+52 -18 lines across 2 files"
+    },
+    {
+      "id": "1102",
+      "title": "chore: update react to 18",
+      "repo": "frontend-webapp",
+      "branch": "chore/react-18",
+      "targetBranch": "main",
+      "author": "mchen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcWalIp5gBWWzQubn7vXC5ldg0ZlJ-AJAMHLt3rwFozk7qILgoDP1h2nC-hGE3UzuRsiq4z-puJ_smdQUNdT_9txVgsj-PvWqx3icY3ZQFXwyBrz_5ahrPlqs_aqww5z1uUSkOeE4z-STf9ae5sTrCtTnBna2V2wP19psft4jITWYXef0zanMtUzlM5YYtwiWVXu3Ripr5QhjGd3JN4pGLwWKQXEOskbb0WmTbw4u1tUKJJUB72ca0RA",
+      "status": "Draft",
+      "ciStatus": "Passing",
+      "updated": "3d ago",
+      "reviewers": [
+        "alex.chen"
+      ],
+      "commentsCount": 0,
+      "diff": "+890 -640 lines across 14 files"
+    },
+    {
+      "id": "1024",
+      "title": "feat(auth): implement oauth2 token rotation",
+      "repo": "core-auth-service",
+      "branch": "feat/token-rotation",
+      "targetBranch": "main",
+      "author": "alex.chen",
+      "authorAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfGl7Ti_ddQRcdadRwh6S-WjOJ7pVim5eugp1PMBLCpFAWRtMItbSA5AmYXOZdFLmr4hqr0XEiAkXE4tpOX79lzvnurZBiT8tQsPycBANDwYptifDEMS322Fb0vY6DE_lYOXlU9hoSseAQrseERt5oVvKlS2qv2Q1gYhwhsNj28_6k5WwxX8qMj20vgbeG_8nh72KzAfCwexo-YuGxEmxUJvMzh1u6TdWALqw39Z31mOJdrRTw-g062A",
+      "status": "Merged",
+      "ciStatus": "Passing",
+      "updated": "4d ago",
+      "reviewers": [
+        "jsmith"
+      ],
+      "commentsCount": 5,
+      "diff": "+175 -30 lines across 4 files"
+    }
+  ],
+  "commits": [
+    {
+      "hash": "7a8f9c1",
+      "message": "Merge branch 'hotfix/db-conn' into main",
+      "repo": "core-backend",
+      "author": "alex.chen",
+      "time": "12m ago",
+      "timestamp": "2026-10-19T13:28:00Z"
+    },
+    {
+      "hash": "b2c3d4e",
+      "message": "fix: connection pool exhaustion under load",
+      "repo": "core-backend",
+      "author": "alex.chen",
+      "time": "45m ago",
+      "timestamp": "2026-10-19T12:55:00Z"
+    },
+    {
+      "hash": "f4e5a6b",
+      "message": "docs: update readme with new setup instructions",
+      "repo": "frontend-webapp",
+      "author": "mchen",
+      "time": "2h ago",
+      "timestamp": "2026-10-19T11:40:00Z"
+    },
+    {
+      "hash": "c6c7f73",
+      "message": "added integration file and connection endpoints",
+      "repo": "devora",
+      "author": "alex.chen",
+      "time": "4h ago",
+      "timestamp": "2026-10-19T09:30:00Z"
+    },
+    {
+      "hash": "8dad9b1",
+      "message": "A step towards my developer journey",
+      "repo": "devora",
+      "author": "alex.chen",
+      "time": "1d ago",
+      "timestamp": "2026-10-18T14:10:00Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-51b5fd",
+      "type": "pr_opened",
+      "title": "Opened PR #4895 on core-backend",
+      "subtitle": "feat(test): automated test PR",
+      "time": "Just now",
+      "icon": "call_split",
+      "color": "primary"
+    },
+    {
+      "id": "act-1d216e",
+      "type": "ticket_created",
+      "title": "Created PROJ-4103",
+      "subtitle": "Automated verification ticket",
+      "time": "Just now",
+      "icon": "confirmation_number",
+      "color": "primary"
+    },
+    {
+      "id": "act-db27b7",
+      "type": "pr_opened",
+      "title": "Opened PR #4894 on core-backend",
+      "subtitle": "feat(test): automated test PR",
+      "time": "Just now",
+      "icon": "call_split",
+      "color": "primary"
+    },
+    {
+      "id": "act-f1c2d1",
+      "type": "ticket_created",
+      "title": "Created PROJ-4102",
+      "subtitle": "Automated verification ticket",
+      "time": "Just now",
+      "icon": "confirmation_number",
+      "color": "primary"
+    },
+    {
+      "id": "act-0cd2a1",
+      "type": "pr_opened",
+      "title": "Opened PR #4893 on core-backend",
+      "subtitle": "feat(test): automated test PR",
+      "time": "Just now",
+      "icon": "call_split",
+      "color": "primary"
+    },
+    {
+      "id": "act-0629b1",
+      "type": "ticket_created",
+      "title": "Created PROJ-4101",
+      "subtitle": "Automated verification ticket",
+      "time": "Just now",
+      "icon": "confirmation_number",
+      "color": "primary"
+    },
+    {
+      "id": "act-1",
+      "type": "pr_merge",
+      "title": "Merged PR #1024 into main",
+      "subtitle": "feat(auth): implement oauth2 token rotation",
+      "time": "10m ago",
+      "icon": "merge",
+      "color": "primary"
+    },
+    {
+      "id": "act-2",
+      "type": "comment",
+      "title": "Commented on #4892",
+      "subtitle": "\"We should add a retry mechanism here for transient network failures.\"",
+      "time": "45m ago",
+      "icon": "chat_bubble",
+      "color": "secondary"
+    },
+    {
+      "id": "act-3",
+      "type": "ticket_status",
+      "title": "Moved CORE-891 to Done",
+      "subtitle": "Refactor user session caching strategy in Redis cluster",
+      "time": "2h ago",
+      "icon": "check_circle",
+      "color": "tertiary"
+    },
+    {
+      "id": "act-4",
+      "type": "build",
+      "title": "CI Build #889 passed for main",
+      "subtitle": "All 142 unit and integration tests passed in 3m 42s",
+      "time": "3h ago",
+      "icon": "verified",
+      "color": "primary"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "jira",
+      "name": "Jira",
+      "category": "Issue Tracking",
+      "connected": true,
+      "status": "Connected",
+      "workspaceUrl": "https://systemcore.atlassian.net",
+      "apiToken": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      "project": "Alpha",
+      "openIssues": 12,
+      "lastSync": "Just now",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEQL_xlH3vi_lBpD30f-ay9qiJIyDHfkiuHTI_77drooN6uw5p_3AXomryHrcOVmE_6ekYcYVfLW5MY8EXbca2RI7F6rW11CpRFZ5W-D2loGbWpAYRSooI9DpCS_92JAcPLxGeodD3AX3AZKto1iIwD56O2-4AzCw9cls5uNLDaFf0Z1GCeNPyKehhfS5fLjPnK1FVFpdjjo2EGZrHiVW45ErBUUd7olak7XofkFnTjI7vb4g7zPEIgA"
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "category": "Source Code",
+      "connected": true,
+      "status": "Connected",
+      "workspaceId": "systemcore-dev",
+      "appPassword": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      "repositories": 12,
+      "activePrs": 5,
+      "lastSync": "Just now",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZRjokkhd5HVwukRKLWkgFieKifHQc2XkFX1OEKBCXj5ty2q0hxk3NAWs0jfSY7KuY4pjy8BSC51NHr8kGwgY6FUjElhscoR7LrelRfWOWMbEqRq51NX0w8qpwzWOrfkGiVj4yMeUTdghDQ05AvdHQmp07larYltNG1YzYKj9WbalnuTJeZGhNy7CU5fpwx9Bm9UlaqQumk4mtB1s8UoeXCiTo0pRs1MhY7_uyUn4D79HmihGz80TJDg"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "Source Code",
+      "connected": true,
+      "status": "Connected",
+      "workspaceUrl": "https://github.com/pranavvsonawane3-web/Minor_Project.git",
+      "apiToken": "",
+      "repositories": "--",
+      "activePrs": "--",
+      "lastSync": "Just now",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuB18xqqXVoWVXJUK0stTlQ6pGXuKSujrwj1GEy9o1Zbn9Cp3bU3s-gA_5fXaQA0BqRF1TmCGlroFGVXjhmiTsQxTvPldxoGgB-_MqF0QZOU__cPGDAvjkOW9I45RalffgS4IdFDvOF57KILW7i65CKMECYe9xYjX2JfKTU8-QcAx5Tr8YpH0X2iRRlRIP3kL2WUOE-Qe_wCdCYNQqonqsE-N-jAmwCGX3qNeYaL-36t6JCv3J1WZLp8Pw"
+    },
+    {
+      "id": "jenkins",
+      "name": "Jenkins",
+      "category": "CI/CD",
+      "connected": true,
+      "status": "Connected",
+      "workspaceUrl": "https://ci.systemcore.dev",
+      "apiToken": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      "activePipelines": 3,
+      "lastBuild": "5m ago",
+      "lastSync": "Just now",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuDDVLMZrJrd7byj-2RiZbzAaIr1qkbRQMXSbJVxu1mnGMI4D0GmocAgsdrVwUtoyqfSnNJvbtw7PPfAGNlFRsL3-7FtXhIXjYTi7nbFoJ8A0U3fS1i-kZEcH1GqH649o7A_Hty5XY7Lzg2GBtFKMeYaLQYXXN2ubQBku6bKv6Rx4MCt2Q696J71VdxG2kpAo1-_cS5r7ECgkXgUsXf0a5cANE5TS8E835CEx-_Zrgo1Akdjk4P3ly_6Wg"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "category": "Notifications",
+      "connected": true,
+      "status": "Needs Config",
+      "workspace": "DevOps-Internal",
+      "alertChannels": "Pending",
+      "lastSync": "Just now",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuDof6gFaXWIeFgHFvglKI1Yko6wwd8YN1eoCwmqfY7e8Jo6rofTrWod13-gDn9Idd44rMZ4q_PpmQ_wdNhbOCJyBYcaWnqnsf2t7-P9WYvSOIv-LSa2eFIisGsaK20WTXUBecaBrWvS2OmvEw34AwEc8Qp06mAHzrw8-woBEcR0QKAcBZooEpMJUIb1ReH5Pu2s2Z9GxfAQ9Yb-XLRwc_xY6WXpNYK0peJwVZ_0_zzsvv4Y6zroKKwlgA"
+    },
+    {
+      "id": "teams",
+      "name": "MS Teams",
+      "category": "Collaboration",
+      "connected": false,
+      "status": "Disconnected",
+      "workspace": "--",
+      "alertChannels": "--",
+      "lastSync": "Never",
+      "logo": "https://lh3.googleusercontent.com/aida-public/AB6AXuAeF9dweK7Fr2jeLVl3cyMURiLs0XtGEruvgRsmSTKdUIuqYw7Ee1UUbi9-Uniuo8gJ3M52ctJdME8Id2Zp8jVCqKEkrdYRFiRWJWAjzZ9-N48ig-wWs0fw4ez7aNqFSxVTtY_o3NW-jJPLpFBDZ12xCTrvbxnlCWbw53gyFT5j6pnzG90RzesKh7muD3_a-EIE_fcPBOu--NNmNTLdJaXr20EsCizojKGzTioBU63HIpXohUUR1yxr0Q"
+    }
+  ],
+  "settings": {
+    "profile": {
+      "fullName": "Alex Chen",
+      "email": "alex.chen@systemcore.dev",
+      "role": "Senior DevOps Engineer",
+      "timezone": "UTC+05:30"
+    },
+    "notifications": {
+      "failedBuilds": true,
+      "prReviews": true,
+      "ticketAssignments": true,
+      "slackAlerts": false,
+      "emailDigest": true,
+      "criticalIncidents": true
+    },
+    "apiKeys": [
+      {
+        "id": "key-1",
+        "name": "Production CLI Token",
+        "key": "devora_live_9f81a7b6c3e24d5a",
+        "created": "2026-09-10",
+        "lastUsed": "Today, 11:20 AM"
+      },
+      {
+        "id": "key-2",
+        "name": "GitHub Actions Webhook",
+        "key": "devora_live_2e4d8a1c9b7f5e30",
+        "created": "2026-08-22",
+        "lastUsed": "Yesterday"
+      }
+    ],
+    "appearance": {
+      "theme": "dark",
+      "density": "comfortable",
+      "compactTables": false
+    },
+    "gemini": {
+      "apiKey": "",
+      "model": "gemini-3.8-flash"
+    }
+  },
+  "chat_messages": [
+    {
+      "id": "m-1",
+      "sender": "user",
+      "text": "Show me my pending Jira tickets.",
+      "timestamp": "10:14 AM"
+    },
+    {
+      "id": "m-2",
+      "sender": "ai",
+      "text": "You have 6 pending tickets in the current sprint. 3 are high priority:",
+      "cards": [
+        {
+          "key": "PROJ-452",
+          "priority": "High",
+          "title": "Implement OAuth flow for third-party integrations",
+          "status": "In Progress"
+        },
+        {
+          "key": "PROJ-489",
+          "priority": "High",
+          "title": "Fix race condition in worker pool shutdown",
+          "status": "In Progress"
+        }
+      ],
+      "timestamp": "10:14 AM"
+    },
+    {
+      "id": "m-3",
+      "sender": "user",
+      "text": "Create a summary of my assigned tickets.",
+      "timestamp": "10:15 AM"
+    },
+    {
+      "id": "m-4",
+      "sender": "ai",
+      "text": "Here is a structured overview of all your currently assigned issues:",
+      "table": [
+        {
+          "key": "PROJ-124",
+          "summary": "Implement rate limiting middleware",
+          "priority": "Med",
+          "status": "In Progress",
+          "due": "Oct 24"
+        },
+        {
+          "key": "PROJ-189",
+          "summary": "Update dependencies for core runner",
+          "priority": "Low",
+          "status": "To Do",
+          "due": "Oct 29"
+        },
+        {
+          "key": "PROJ-201",
+          "summary": "Fix UI inconsistency on mobile nav",
+          "priority": "Med",
+          "status": "Review",
+          "due": "Oct 26"
+        }
+      ],
+      "timestamp": "10:15 AM"
+    }
+  ]
+}

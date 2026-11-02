@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Devora AI - Activity & Standup</title><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#aeb9d0", "on-surface": "#dae2fd", "primary-fixed": "#d8e2ff", "on-secondary-fixed-variant": "#3c475a", "on-secondary": "#263143", "primary": "#adc6ff", "on-primary-fixed-variant": "#004395", "on-secondary-fixed": "#111c2d", "error-container": "#93000a", "on-background": "#dae2fd", "outline": "#8c909f", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#723600", "surface-container-highest": "#2d3449", "surface-dim": "#0b1326", "on-primary-container": "#00285d", "secondary-fixed": "#d8e3fb", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-tertiary-fixed": "#311400", "outline-variant": "#424754", "surface-tint": "#adc6ff", "on-tertiary-container": "#461f00", "primary-fixed-dim": "#adc6ff", "tertiary-fixed": "#ffdcc6", "on-primary": "#002e6a", "surface-container": "#171f33", "surface-container-low": "#131b2e", "tertiary-container": "#df7412", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb786", "on-surface-variant": "#c2c6d6", "surface": "#0b1326", "background": "#0b1326", "on-error": "#690005", "tertiary": "#ffb786", "on-tertiary": "#502400", "surface-bright": "#31394d", "secondary": "#bcc7de", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "secondary-container": "#3e495d", "primary-container": "#4d8eff", "on-primary-fixed": "#001a42", "inverse-primary": "#005ac2", "inverse-surface": "#dae2fd", "secondary-fixed-dim": "#bcc7de" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "base": "4px", "lg": "24px", "gutter": "16px", "xs": "4px", "margin-mobile": "16px", "margin-desktop": "32px", "md": "16px", "sm": "8px", "xl": "32px" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-mono": ["JetBrains Mono"], "code-block": ["JetBrains Mono"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container border-r border-outline-variant z-50 flex flex-col">
+  <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-md">
+      <span class="material-symbols-outlined text-[20px]">terminal</span>
+    </div>
+    <span class="font-headline-sm text-on-surface tracking-tight">Devora AI</span>
+  </div>
+  <div class="px-lg mb-lg">
+    <a href="chat.html" class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-md px-lg rounded-xl font-headline-sm hover:opacity-90 transition-opacity">
+      <span class="material-symbols-outlined text-[20px]">add_circle</span>New Chat
+    </a>
+  </div>
+  <nav class="flex-1 overflow-y-auto px-md space-y-xl" data-active-classes="bg-secondary-container text-on-secondary-container font-medium">
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Chat</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="chat" href="chat.html">
+        <span class="material-symbols-outlined mr-sm">smart_toy</span>AI Assistant
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Insights</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined mr-sm">dashboard</span>Dashboard
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-tickets" href="tickets.html">
+        <span class="material-symbols-outlined mr-sm">confirmation_number</span>My Tickets
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pull-requests" href="pull-requests.html">
+        <span class="material-symbols-outlined mr-sm">merge</span>Pull Requests
+      </a>
+      <a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-secondary-container text-on-secondary-container font-medium" data-path="activity" href="activity.html">
+        <span class="material-symbols-outlined mr-sm">switch_account</span>Activity
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Management</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="integrations" href="integrations.html">
+        <span class="material-symbols-outlined mr-sm">extension</span>Integrations
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+        <span class="material-symbols-outlined mr-sm">settings</span>Settings
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-settings" href="api-settings.html">
+        <span class="material-symbols-outlined mr-sm">key</span>API Settings
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-xl">
+    <div class="flex items-center gap-lg">
+      <h1 class="font-headline-sm text-on-surface">Devora AI</h1>
+      <div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+        <div class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+        </div>
+        <span class="text-body-sm text-on-surface-variant">All systems connected</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-lg">
+      <div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-lg border border-outline-variant text-outline cursor-pointer hover:bg-surface-container-high transition-colors" onclick="Devora.openSearchPalette()">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+        <span class="text-body-md">Search</span>
+        <span class="text-label-mono bg-surface-container px-sm py-[2px] rounded border border-outline-variant ml-md">⌘K</span>
+      </div>
+      <div class="flex items-center gap-md">
+        <div class="relative cursor-pointer p-1 rounded-lg hover:bg-surface-container-high transition-colors" onclick="Devora.toggleNotifications(this)">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="Devora.toggleProfileMenu(this)">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 min-h-screen bg-background">
+    <div class="flex flex-col w-full px-xl py-lg gap-lg">
+      <div class="grid grid-cols-12 gap-lg">
+        <div class="col-span-12 xl:col-span-8 flex flex-col gap-lg">
+          <!-- Standup Generator Header Card -->
+          <div class="bg-surface-container rounded-xl overflow-hidden shadow-lg relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="p-lg relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md">
+              <div class="flex flex-col">
+                <h2 class="font-headline-md text-on-surface">Daily Stand-up</h2>
+                <p class="font-body-md text-on-surface-variant mt-sm">Your AI-generated summary of yesterday's progress and today's priorities.</p>
+              </div>
+              <div class="flex gap-2">
+                <button id="copy-standup-btn" class="bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-sm px-md py-md rounded-lg transition-colors border border-outline-variant flex items-center gap-sm shrink-0 cursor-pointer">
+                  <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                  Copy Update
+                </button>
+                <button id="generate-standup-btn" class="bg-primary text-on-primary font-headline-sm px-lg py-md rounded-lg hover:opacity-90 transition-opacity shadow-md flex items-center gap-sm shrink-0 cursor-pointer">
+                  <span class="material-symbols-outlined text-[20px]">magic_button</span>
+                  Generate Update
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Grid for Yesterday & Today -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+            <!-- Yesterday -->
+            <div class="bg-surface-container rounded-xl p-lg flex flex-col shadow-md">
+              <div class="flex items-center gap-sm mb-lg">
+                <span class="material-symbols-outlined text-secondary">history</span>
+                <h3 class="font-headline-sm text-on-surface">Yesterday</h3>
+              </div>
+              <div class="flex gap-md mb-lg">
+                <div class="bg-surface-container-high rounded-lg p-md flex-1 text-center">
+                  <span id="yesterday-commits-count" class="block font-display-lg text-primary">4</span>
+                  <span class="font-label-mono text-on-surface-variant uppercase tracking-wider text-[10px]">Commits</span>
+                </div>
+                <div class="bg-surface-container-high rounded-lg p-md flex-1 text-center">
+                  <span id="yesterday-pr-count" class="block font-display-lg text-primary">1</span>
+                  <span class="font-label-mono text-on-surface-variant uppercase tracking-wider text-[10px]">PR Closed</span>
+                </div>
+              </div>
+              <div class="flex-1 space-y-md">
+                <p class="font-label-mono text-outline uppercase tracking-wider text-[10px]">Completed Tasks</p>
+                <div class="space-y-3" id="yesterday-tasks-list">
+                  <!-- Rendered via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Today -->
+            <div class="bg-surface-container rounded-xl p-lg flex flex-col shadow-md relative overflow-hidden">
+              <div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
+              <div class="flex items-center gap-sm mb-lg relative z-10">
+                <span class="material-symbols-outlined text-tertiary">today</span>
+                <h3 class="font-headline-sm text-on-surface">Today</h3>
+              </div>
+              <div class="flex gap-md mb-lg relative z-10">
+                <div class="bg-surface-container-high rounded-lg p-md flex-1 text-center">
+                  <span id="today-tickets-count" class="block font-display-lg text-tertiary">3</span>
+                  <span class="font-label-mono text-on-surface-variant uppercase tracking-wider text-[10px]">Active Tickets</span>
+                </div>
+                <div class="bg-surface-container-high rounded-lg p-md flex-1 text-center">
+                  <span id="today-reviews-count" class="block font-display-lg text-tertiary">2</span>
+                  <span class="font-label-mono text-on-surface-variant uppercase tracking-wider text-[10px]">Reviews</span>
+                </div>
+              </div>
+              <div class="flex-1 space-y-md relative z-10">
+                <p class="font-label-mono text-outline uppercase tracking-wider text-[10px]">Priority Items</p>
+                <div class="space-y-2" id="today-tasks-list">
+                  <!-- Rendered via JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-12 xl:col-span-4 flex flex-col gap-lg">
+          <!-- Blockers Card -->
+          <div class="bg-error-container/10 border border-error/20 rounded-xl p-lg flex flex-col shadow-md">
+            <div class="flex items-center gap-sm mb-lg">
+              <span class="material-symbols-outlined text-error">block</span>
+              <h3 class="font-headline-sm text-error">Blockers</h3>
+              <span class="ml-auto bg-error text-on-error font-label-mono px-sm py-xs rounded text-[10px]" id="blockers-count-badge">2 ISSUES</span>
+            </div>
+            <div class="space-y-md" id="blockers-list-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Productivity Trend -->
+          <div class="bg-surface-container rounded-xl p-lg flex-1 shadow-md relative overflow-hidden flex flex-col justify-between">
+            <div class="relative z-10 mb-md">
+              <h3 class="font-headline-sm text-on-surface">Productivity Trend</h3>
+              <p class="font-body-sm text-on-surface-variant mt-xs">Code output vs review velocity</p>
+            </div>
+            <!-- Interactive bar chart -->
+            <div class="relative w-full h-32 flex items-end justify-between gap-sm z-10 px-sm">
+              <div class="w-full bg-primary/20 rounded-t-sm h-12 relative group cursor-pointer hover:bg-primary/40 transition-colors">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-on-surface text-[10px] px-sm py-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">Mon: 12 commits</div>
+              </div>
+              <div class="w-full bg-primary/40 rounded-t-sm h-24 relative group cursor-pointer hover:bg-primary/60 transition-colors">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-on-surface text-[10px] px-sm py-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">Tue: 24 commits</div>
+              </div>
+              <div class="w-full bg-primary/60 rounded-t-sm h-20 relative group cursor-pointer hover:bg-primary/80 transition-colors">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-on-surface text-[10px] px-sm py-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">Wed: 20 commits</div>
+              </div>
+              <div class="w-full bg-primary rounded-t-sm h-32 relative group cursor-pointer hover:opacity-90 transition-opacity">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-on-surface text-[10px] px-sm py-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">Thu: 32 commits</div>
+              </div>
+              <div class="w-full bg-secondary/40 rounded-t-sm h-16 relative group cursor-pointer hover:bg-secondary/60 transition-colors">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface text-on-surface text-[10px] px-sm py-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">Fri: 16 commits</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Timeline -->
+      <div class="bg-surface-container rounded-xl p-lg shadow-md mt-sm">
+        <div class="flex items-center justify-between mb-lg">
+          <h3 class="font-headline-sm text-on-surface">Recent Activity</h3>
+          <span class="text-label-mono text-outline text-xs">Live Feed</span>
+        </div>
+        <div class="relative border-l border-outline-variant ml-sm space-y-lg py-sm" id="timeline-container">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="devora-core.js"></script>
+<script>
+  let lastStandupMarkdown = '';
+
+  async function loadActivityData() {
+    const tickets = await Devora.state.api('/tickets') || [];
+    const prs = await Devora.state.api('/pull-requests') || [];
+    const state = Devora.state.getLocal();
+    const commits = state.commits || [];
+    const activities = state.activities || [];
+
+    // 1. Yesterday Completed
+    const doneTickets = tickets.filter(t => t.status === 'Done');
+    document.getElementById('yesterday-commits-count').textContent = commits.length;
+    document.getElementById('yesterday-pr-count').textContent = prs.filter(p => p.status === 'Merged').length;
+
+    const yContainer = document.getElementById('yesterday-tasks-list');
+    if (yContainer) {
+      yContainer.innerHTML = doneTickets.slice(0, 3).map(t => `
+        <div class="flex items-start gap-md">
+          <span class="material-symbols-outlined text-primary text-[16px] mt-xs">check_circle</span>
+          <div class="flex flex-col">
+            <span class="font-body-sm text-primary font-label-mono">${t.id}</span>
+            <span class="font-body-md text-on-surface line-clamp-2">${t.summary}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 2. Today Active
+    const inprogTickets = tickets.filter(t => t.status === 'In Progress');
+    const reviewPRs = prs.filter(p => p.status === 'Needs Review' || p.status === 'Review');
+
+    document.getElementById('today-tickets-count').textContent = inprogTickets.length;
+    document.getElementById('today-reviews-count').textContent = reviewPRs.length;
+
+    const tContainer = document.getElementById('today-tasks-list');
+    if (tContainer) {
+      tContainer.innerHTML = inprogTickets.slice(0, 3).map(t => `
+        <div onclick="window.location.href='tickets.html'" class="flex items-center justify-between p-sm -mx-sm rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer">
+          <div class="flex items-center gap-sm">
+            <span class="font-label-mono text-tertiary text-[10px] px-sm py-xs bg-tertiary/10 rounded">${t.id}</span>
+            <span class="font-body-md text-on-surface truncate max-w-[240px]">${t.summary}</span>
+          </div>
+          <span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+        </div>
+      `).join('');
+    }
+
+    // 3. Blockers
+    const highPri = tickets.filter(t => t.priority === 'High' && t.status !== 'Done');
+    const bContainer = document.getElementById('blockers-list-container');
+    const bBadge = document.getElementById('blockers-count-badge');
+    if (bBadge) bBadge.textContent = `${highPri.length} ISSUES`;
+
+    if (bContainer) {
+      bContainer.innerHTML = highPri.slice(0, 2).map(t => `
+        <div onclick="window.location.href='tickets.html'" class="bg-surface-container p-md rounded-lg shadow-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+          <div class="flex items-start gap-sm mb-xs">
+            <span class="font-body-sm text-error font-medium">${t.id}</span>
+            <span class="font-label-mono text-outline text-[10px] ml-auto">${t.status}</span>
+          </div>
+          <p class="font-body-md text-on-surface line-clamp-2">${t.summary}</p>
+        </div>
+      `).join('');
+    }
+
+    // 4. Timeline
+    const timeContainer = document.getElementById('timeline-container');
+    if (timeContainer && activities.length > 0) {
+      timeContainer.innerHTML = activities.map(a => `
+        <div class="relative pl-lg group">
+          <div class="absolute -left-[5px] top-1 w-[10px] h-[10px] rounded-full bg-${a.color || 'primary'} ring-4 ring-surface-container group-hover:scale-125 transition-transform"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-xs mb-xs">
+            <p class="font-body-md text-on-surface">${a.title}</p>
+            <span class="font-label-mono text-outline text-[10px]">${a.time}</span>
+          </div>
+          <p class="font-body-sm text-on-surface-variant line-clamp-1">${a.subtitle}</p>
+        </div>
+      `).join('');
+    }
+
+    // Prepare default standup markdown
+    lastStandupMarkdown = `### 🚀 Daily Standup - Alex Chen\n\n` +
+      `**Yesterday:**\n` + doneTickets.map(t => `- Completed ${t.id}: ${t.summary}`).join('\n') + `\n\n` +
+      `**Today:**\n` + inprogTickets.map(t => `- Working on ${t.id}: ${t.summary}`).join('\n') + `\n\n` +
+      `**Blockers:**\n` + highPri.map(t => `- Priority Item: ${t.id} - ${t.summary}`).join('\n');
+  }
+
+  async function generateStandup() {
+    Devora.toast('AI compiling stand-up update...', 'info');
+    const res = await Devora.state.api('/activity/standup', { method: 'POST' });
+    if (res && res.markdown) {
+      lastStandupMarkdown = res.markdown;
+      Devora.toast('Daily stand-up generated successfully!', 'success');
+      loadActivityData();
+    }
+  }
+
+  function copyStandup() {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(lastStandupMarkdown);
+      Devora.toast('Stand-up copied to clipboard!', 'success');
+    } else {
+      Devora.toast('Clipboard access unavailable', 'error');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadActivityData();
+    document.getElementById('generate-standup-btn')?.addEventListener('click', generateStandup);
+    document.getElementById('copy-standup-btn')?.addEventListener('click', copyStandup);
+  });
+</script>
+</body></html>

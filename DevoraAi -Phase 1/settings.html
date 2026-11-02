@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Devora AI - Settings</title><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#aeb9d0", "on-surface": "#dae2fd", "primary-fixed": "#d8e2ff", "on-secondary-fixed-variant": "#3c475a", "on-secondary": "#263143", "primary": "#adc6ff", "on-primary-fixed-variant": "#004395", "on-secondary-fixed": "#111c2d", "error-container": "#93000a", "on-background": "#dae2fd", "outline": "#8c909f", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#723600", "surface-container-highest": "#2d3449", "surface-dim": "#0b1326", "on-primary-container": "#00285d", "secondary-fixed": "#d8e3fb", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-tertiary-fixed": "#311400", "outline-variant": "#424754", "surface-tint": "#adc6ff", "on-tertiary-container": "#461f00", "primary-fixed-dim": "#adc6ff", "tertiary-fixed": "#ffdcc6", "on-primary": "#002e6a", "surface-container": "#171f33", "surface-container-low": "#131b2e", "tertiary-container": "#df7412", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb786", "on-surface-variant": "#c2c6d6", "surface": "#0b1326", "background": "#0b1326", "on-error": "#690005", "tertiary": "#ffb786", "on-tertiary": "#502400", "surface-bright": "#31394d", "secondary": "#bcc7de", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "secondary-container": "#3e495d", "primary-container": "#4d8eff", "on-primary-fixed": "#001a42", "inverse-primary": "#005ac2", "inverse-surface": "#dae2fd", "secondary-fixed-dim": "#bcc7de" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "base": "4px", "lg": "24px", "gutter": "16px", "xs": "4px", "margin-mobile": "16px", "margin-desktop": "32px", "md": "16px", "sm": "8px", "xl": "32px" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "label-mono": ["JetBrains Mono"], "code-block": ["JetBrains Mono"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container border-r border-outline-variant z-50 flex flex-col">
+  <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-md">
+      <span class="material-symbols-outlined text-[20px]">terminal</span>
+    </div>
+    <span class="font-headline-sm text-on-surface tracking-tight">Devora AI</span>
+  </div>
+  <div class="px-lg mb-lg">
+    <a href="chat.html" class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-md px-lg rounded-xl font-headline-sm hover:opacity-90 transition-opacity">
+      <span class="material-symbols-outlined text-[20px]">add_circle</span>New Chat
+    </a>
+  </div>
+  <nav class="flex-1 overflow-y-auto px-md space-y-xl" data-active-classes="bg-secondary-container text-on-secondary-container font-medium">
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Chat</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="chat" href="chat.html">
+        <span class="material-symbols-outlined mr-sm">smart_toy</span>AI Assistant
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Insights</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined mr-sm">dashboard</span>Dashboard
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-tickets" href="tickets.html">
+        <span class="material-symbols-outlined mr-sm">confirmation_number</span>My Tickets
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pull-requests" href="pull-requests.html">
+        <span class="material-symbols-outlined mr-sm">merge</span>Pull Requests
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="activity" href="activity.html">
+        <span class="material-symbols-outlined mr-sm">switch_account</span>Activity
+      </a>
+    </div>
+    <div class="space-y-xs">
+      <span class="px-md text-body-sm font-bold uppercase text-outline tracking-widest">Management</span>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="integrations" href="integrations.html">
+        <span class="material-symbols-outlined mr-sm">extension</span>Integrations
+      </a>
+      <a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-secondary-container text-on-secondary-container font-medium" data-path="settings" href="settings.html">
+        <span class="material-symbols-outlined mr-sm">settings</span>Settings
+      </a>
+      <a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-settings" href="api-settings.html">
+        <span class="material-symbols-outlined mr-sm">key</span>API Settings
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-xl">
+    <div class="flex items-center gap-lg">
+      <h1 class="font-headline-sm text-on-surface">Devora AI</h1>
+      <div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+        <div class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+        </div>
+        <span class="text-body-sm text-on-surface-variant">All systems connected</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-lg">
+      <div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-lg border border-outline-variant text-outline cursor-pointer hover:bg-surface-container-high transition-colors" onclick="Devora.openSearchPalette()">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+        <span class="text-body-md">Search</span>
+        <span class="text-label-mono bg-surface-container px-sm py-[2px] rounded border border-outline-variant ml-md">⌘K</span>
+      </div>
+      <div class="flex items-center gap-md">
+        <div class="relative cursor-pointer p-1 rounded-lg hover:bg-surface-container-high transition-colors" onclick="Devora.toggleNotifications(this)">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="Devora.toggleProfileMenu(this)">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 min-h-screen bg-background">
+    <div class="flex flex-col w-full h-full max-w-[1200px] mx-auto px-lg py-xl gap-xl relative overflow-hidden">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg relative z-10">
+        <div>
+          <h2 class="font-display-lg text-on-surface mb-xs">Settings</h2>
+          <p class="font-body-lg text-on-surface-variant">Manage your account preferences, notifications, API tokens, and appearance.</p>
+        </div>
+        <div class="flex items-center gap-md">
+          <button id="discard-btn" class="px-md py-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-headline-sm border border-outline-variant flex items-center gap-sm shadow-sm cursor-pointer">
+            <span class="material-symbols-outlined text-[20px]">undo</span>
+            Discard
+          </button>
+          <button id="save-all-btn" class="px-md py-sm rounded-lg bg-primary hover:bg-primary/90 text-on-primary transition-colors font-headline-sm flex items-center gap-sm shadow-md cursor-pointer">
+            <span class="material-symbols-outlined text-[20px]">save</span>
+            Save Changes
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-xl relative z-10">
+        <nav class="w-full lg:w-64 shrink-0 flex flex-row lg:flex-col gap-xs overflow-x-auto lg:overflow-visible pb-md lg:pb-0" id="settings-tabs">
+          <button class="tab-btn w-full text-left px-md py-sm rounded-lg bg-secondary-container text-on-secondary-container font-headline-sm flex items-center gap-sm transition-all whitespace-nowrap cursor-pointer" data-target="profile">
+            <span class="material-symbols-outlined text-[20px]">person</span> Profile
+          </button>
+          <button class="tab-btn w-full text-left px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-headline-sm flex items-center gap-sm transition-all whitespace-nowrap cursor-pointer" data-target="notifications">
+            <span class="material-symbols-outlined text-[20px]">notifications</span> Notifications
+          </button>
+          <button class="tab-btn w-full text-left px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-headline-sm flex items-center gap-sm transition-all whitespace-nowrap cursor-pointer" data-target="api-keys">
+            <span class="material-symbols-outlined text-[20px]">key</span> API Keys
+          </button>
+          <button class="tab-btn w-full text-left px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-headline-sm flex items-center gap-sm transition-all whitespace-nowrap cursor-pointer" data-target="appearance">
+            <span class="material-symbols-outlined text-[20px]">palette</span> Appearance
+          </button>
+        </nav>
+
+        <div class="flex-1 bg-surface-container rounded-xl p-lg shadow-sm border border-outline-variant/40">
+          <!-- Profile Section -->
+          <section class="tab-content block space-y-xl" id="profile-section">
+            <div class="border-b border-outline-variant pb-md">
+              <h3 class="font-headline-md text-on-surface mb-xs">Profile Settings</h3>
+              <p class="font-body-md text-on-surface-variant">Update your personal information and how others see you on the platform.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-lg items-start">
+              <div class="flex-1 space-y-lg w-full">
+                <div class="space-y-xs">
+                  <label class="font-label-mono text-on-surface-variant uppercase tracking-wider block text-xs">Full Name</label>
+                  <input id="profile-name" class="w-full bg-surface text-on-surface font-body-md px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:outline-none transition-colors" type="text" value="Alex Chen">
+                </div>
+                <div class="space-y-xs">
+                  <label class="font-label-mono text-on-surface-variant uppercase tracking-wider block text-xs">Email Address</label>
+                  <input id="profile-email" class="w-full bg-surface text-on-surface font-body-md px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:outline-none transition-colors" type="email" value="alex.chen@systemcore.dev">
+                </div>
+                <div class="space-y-xs">
+                  <label class="font-label-mono text-on-surface-variant uppercase tracking-wider block text-xs">Role</label>
+                  <select id="profile-role" class="w-full bg-surface text-on-surface font-body-md px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:outline-none transition-colors">
+                    <option value="Senior DevOps Engineer">Senior DevOps Engineer</option>
+                    <option value="Platform Engineer">Platform Engineer</option>
+                    <option value="SRE">Site Reliability Engineer (SRE)</option>
+                    <option value="Engineering Lead">Engineering Lead</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-md p-md bg-surface-container-high rounded-lg w-full md:w-64 border border-outline-variant shrink-0">
+                <div class="w-28 h-28 rounded-full bg-primary flex items-center justify-center text-3xl font-bold text-on-primary shadow-md">
+                  AC
+                </div>
+                <button type="button" onclick="Devora.toast('Avatar updated!', 'success')" class="text-primary font-headline-sm hover:underline text-xs">
+                  Upload new avatar
+                </button>
+                <p class="font-body-sm text-on-surface-variant text-center text-xs">Recommended size: 256x256px.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Notifications Section -->
+          <section class="tab-content hidden space-y-xl" id="notifications-section">
+            <div class="border-b border-outline-variant pb-md">
+              <h3 class="font-headline-md text-on-surface mb-xs">Notification Preferences</h3>
+              <p class="font-body-md text-on-surface-variant">Choose what pipeline and review events you want alerts for.</p>
+            </div>
+            <div class="space-y-md">
+              <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+                <div>
+                  <div class="font-body-md text-on-surface font-medium">Failed CI/CD Builds</div>
+                  <div class="text-xs text-on-surface-variant">Immediate alert when main branch build or test suite fails.</div>
+                </div>
+                <input type="checkbox" id="notif-builds" checked class="w-5 h-5 accent-primary cursor-pointer" />
+              </div>
+
+              <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+                <div>
+                  <div class="font-body-md text-on-surface font-medium">Pull Request Review Requests</div>
+                  <div class="text-xs text-on-surface-variant">Notify when someone adds you as a required reviewer.</div>
+                </div>
+                <input type="checkbox" id="notif-prs" checked class="w-5 h-5 accent-primary cursor-pointer" />
+              </div>
+
+              <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+                <div>
+                  <div class="font-body-md text-on-surface font-medium">Jira Ticket Assignments</div>
+                  <div class="text-xs text-on-surface-variant">Notify when an issue is assigned or tagged to your name.</div>
+                </div>
+                <input type="checkbox" id="notif-tickets" checked class="w-5 h-5 accent-primary cursor-pointer" />
+              </div>
+
+              <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+                <div>
+                  <div class="font-body-md text-on-surface font-medium">Slack Channel Digest</div>
+                  <div class="text-xs text-on-surface-variant">Post daily summary directly into #devops-alerts.</div>
+                </div>
+                <input type="checkbox" id="notif-slack" class="w-5 h-5 accent-primary cursor-pointer" />
+              </div>
+            </div>
+          </section>
+
+          <!-- API Keys Section -->
+          <section class="tab-content hidden space-y-xl" id="api-keys-section">
+            <div class="border-b border-outline-variant pb-md flex items-center justify-between">
+              <div>
+                <h3 class="font-headline-md text-on-surface mb-xs">Active API Keys</h3>
+                <p class="font-body-md text-on-surface-variant">Manage your programmatic authentication tokens.</p>
+              </div>
+              <button id="generate-key-btn" class="px-md py-sm bg-primary text-on-primary rounded-lg text-xs font-label-mono flex items-center gap-1 hover:opacity-90">
+                <span class="material-symbols-outlined text-[16px]">add</span> Generate Key
+              </button>
+            </div>
+            <div class="space-y-sm" id="api-keys-list">
+              <!-- Rendered via JS -->
+            </div>
+          </section>
+
+          <!-- Appearance Section -->
+          <section class="tab-content hidden space-y-xl" id="appearance-section">
+            <div class="border-b border-outline-variant pb-md">
+              <h3 class="font-headline-md text-on-surface mb-xs">Appearance & Theme</h3>
+              <p class="font-body-md text-on-surface-variant">Customize the theme mode and layout preferences for your workspace.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+              <div onclick="selectTheme('dark')" id="theme-dark-card" class="p-md rounded-xl border-2 border-primary bg-surface-container-low flex flex-col gap-sm cursor-pointer">
+                <div class="flex items-center justify-between">
+                  <span class="font-headline-sm text-sm text-on-surface font-semibold">Dark Theme</span>
+                  <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                </div>
+                <p class="text-xs text-on-surface-variant">High-contrast dark mode tailored for low-light coding environments.</p>
+              </div>
+              <div onclick="selectTheme('light')" id="theme-light-card" class="p-md rounded-xl border border-outline-variant bg-surface-container-low flex flex-col gap-sm cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                <div class="flex items-center justify-between">
+                  <span class="font-headline-sm text-sm text-on-surface font-semibold">Light Theme</span>
+                  <span class="material-symbols-outlined text-outline text-[20px]">brightness_medium</span>
+                </div>
+                <p class="text-xs text-on-surface-variant">Standard clean bright theme for well-lit rooms.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="devora-core.js"></script>
+<script>
+  let apiKeys = [
+    { id: 'key-1', name: 'Production CLI Token', key: 'devora_live_9f81a7b6c3e24d5a', created: '2026-09-10' },
+    { id: 'key-2', name: 'GitHub Actions Webhook', key: 'devora_live_2e4d8a1c9b7f5e30', created: '2026-08-22' }
+  ];
+
+  function loadSettings() {
+    const state = Devora.state.getLocal();
+    const user = state.user || {};
+    const notifs = state.settings?.notifications || {};
+
+    if (user.name) document.getElementById('profile-name').value = user.name;
+    if (user.email) document.getElementById('profile-email').value = user.email;
+    if (user.role) document.getElementById('profile-role').value = user.role;
+
+    if (notifs.failedBuilds !== undefined) document.getElementById('notif-builds').checked = notifs.failedBuilds;
+    if (notifs.prReviews !== undefined) document.getElementById('notif-prs').checked = notifs.prReviews;
+    if (notifs.ticketAssignments !== undefined) document.getElementById('notif-tickets').checked = notifs.ticketAssignments;
+    if (notifs.slackAlerts !== undefined) document.getElementById('notif-slack').checked = notifs.slackAlerts;
+
+    renderApiKeys();
+  }
+
+  function renderApiKeys() {
+    const list = document.getElementById('api-keys-list');
+    if (!list) return;
+
+    list.innerHTML = apiKeys.map(k => `
+      <div class="flex items-center justify-between p-3 bg-surface-container-low border border-outline-variant/30 rounded-lg">
+        <div class="flex flex-col">
+          <span class="font-medium text-sm text-on-surface">${k.name}</span>
+          <span class="font-label-mono text-xs text-on-surface-variant mt-0.5">${k.key}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="copyKey('${k.key}')" class="p-1 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" title="Copy Key">
+            <span class="material-symbols-outlined text-[18px]">content_copy</span>
+          </button>
+          <button onclick="revokeKey('${k.id}')" class="p-1 rounded hover:bg-error/20 text-error transition-colors" title="Revoke Key">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function copyKey(key) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(key);
+      Devora.toast('API Key copied to clipboard!', 'success');
+    }
+  }
+
+  function revokeKey(id) {
+    if (confirm('Revoke this API Key immediately?')) {
+      apiKeys = apiKeys.filter(k => k.id !== id);
+      renderApiKeys();
+      Devora.toast('Key revoked', 'info');
+    }
+  }
+
+  function generateNewKey() {
+    const rand = Math.random().toString(36).substring(2, 12);
+    const newKey = {
+      id: 'key-' + Date.now(),
+      name: 'User Token ' + (apiKeys.length + 1),
+      key: `devora_live_${rand}`,
+      created: new Date().toISOString().split('T')[0]
+    };
+    apiKeys.push(newKey);
+    renderApiKeys();
+    Devora.toast('Generated new API Key!', 'success');
+  }
+
+  function selectTheme(theme) {
+    Devora.toast(`Theme set to ${theme}`, 'info');
+  }
+
+  async function saveSettings() {
+    const name = document.getElementById('profile-name').value;
+    const email = document.getElementById('profile-email').value;
+    const role = document.getElementById('profile-role').value;
+
+    const notifications = {
+      failedBuilds: document.getElementById('notif-builds').checked,
+      prReviews: document.getElementById('notif-prs').checked,
+      ticketAssignments: document.getElementById('notif-tickets').checked,
+      slackAlerts: document.getElementById('notif-slack').checked
+    };
+
+    const state = Devora.state.getLocal();
+    state.user = { ...(state.user || {}), name, email, role };
+    state.settings = { ...(state.settings || {}), notifications };
+    Devora.state.setLocal(state);
+
+    await Devora.state.api('/user', { method: 'PUT', body: JSON.stringify({ name, email, role }) });
+    await Devora.state.api('/settings', { method: 'PUT', body: JSON.stringify({ notifications }) });
+
+    Devora.toast('Settings saved successfully!', 'success');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadSettings();
+
+    // Tab Switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const sections = {
+      'profile': document.getElementById('profile-section'),
+      'notifications': document.getElementById('notifications-section'),
+      'api-keys': document.getElementById('api-keys-section'),
+      'appearance': document.getElementById('appearance-section')
+    };
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        btn.classList.remove('text-on-surface-variant');
+
+        Object.values(sections).forEach(s => s && s.classList.add('hidden'));
+        if (sections[target]) sections[target].classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('generate-key-btn')?.addEventListener('click', generateNewKey);
+    document.getElementById('save-all-btn')?.addEventListener('click', saveSettings);
+    document.getElementById('discard-btn')?.addEventListener('click', () => {
+      loadSettings();
+      Devora.toast('Changes discarded', 'info');
+    });
+  });
+</script>
+</body></html>
