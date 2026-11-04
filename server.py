@@ -738,9 +738,12 @@ if WEB_DIR.exists():
 
 if __name__ == "__main__":
     import uvicorn
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", "8000"))
+    reload_mode = True if os.environ.get("PORT") is None else False
     print("\n" + "="*60)
     print(" >>> DEVORA AI - DEVOPS INTELLIGENCE PLATFORM")
-    print(" Access Web App: http://127.0.0.1:8000")
-    print(" API Documentation: http://127.0.0.1:8000/docs")
+    print(f" Access Web App: http://{host}:{port}")
+    print(f" API Documentation: http://{host}:{port}/docs")
     print("="*60 + "\n")
-    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("server:app", host=host, port=port, reload=reload_mode)
