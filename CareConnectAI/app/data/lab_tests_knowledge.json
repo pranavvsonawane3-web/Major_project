@@ -1,0 +1,221 @@
+{
+  "categories": {
+    "cbc": "Complete Blood Count",
+    "lipid": "Lipid / Cholesterol Panel",
+    "cmp": "Comprehensive Metabolic Panel",
+    "thyroid": "Thyroid Function Panel",
+    "diabetes": "Glycemic & Diabetes Monitoring",
+    "vitamins": "Vitamins & Micronutrients"
+  },
+  "tests": {
+    "wbc": {
+      "name": "White Blood Cell Count (WBC)",
+      "category": "cbc",
+      "standard_range": "4.5 - 11.0",
+      "unit": "x10^3/uL",
+      "analogy": "The security guards of your body that fight off infections and illnesses.",
+      "summary": "WBCs are key components of your immune system. They increase when your body is fighting a cold, bacterial infection, or physical stress, and can decrease with certain viral illnesses or medications.",
+      "lifestyle_factors": "Recent viral infection, intense exercise, emotional stress, corticosteroid medications, or smoking.",
+      "questions_for_doctor": [
+        "Could my recent cold or stress explain this WBC count?",
+        "Do you recommend repeating this test in a few weeks to monitor the trend?",
+        "Are there any other signs or symptoms I should watch for?"
+      ]
+    },
+    "rbc": {
+      "name": "Red Blood Cell Count (RBC)",
+      "category": "cbc",
+      "standard_range": "4.2 - 5.9",
+      "unit": "million/uL",
+      "analogy": "The delivery trucks carrying oxygen from your lungs to every organ in your body.",
+      "summary": "RBCs contain hemoglobin, which binds oxygen. Low levels can leave you feeling fatigued or short of breath, while high levels can be related to dehydration or living at high altitudes.",
+      "lifestyle_factors": "Dehydration, high altitude living, heavy endurance training, or smoking.",
+      "questions_for_doctor": [
+        "Does this RBC level relate to my overall energy and iron levels?",
+        "Could mild dehydration have affected this test result?"
+      ]
+    },
+    "hemoglobin": {
+      "name": "Hemoglobin (Hgb)",
+      "category": "cbc",
+      "standard_range": "12.0 - 17.5",
+      "unit": "g/dL",
+      "analogy": "The oxygen-holding protein inside red blood cells.",
+      "summary": "Hemoglobin is the iron-rich protein that grabs oxygen in your lungs and releases it in your tissues. Lower levels are often seen in anemia.",
+      "lifestyle_factors": "Dietary iron intake, menstrual blood loss, pregnancy, or heavy exercise.",
+      "questions_for_doctor": [
+        "Should I have my iron or ferritin levels checked based on this?",
+        "Are dietary changes appropriate before considering supplements?"
+      ]
+    },
+    "hematocrit": {
+      "name": "Hematocrit (Hct)",
+      "category": "cbc",
+      "standard_range": "36.0 - 50.0",
+      "unit": "%",
+      "analogy": "The percentage of your total blood volume that consists of red blood cells.",
+      "summary": "Hematocrit shows how thick or concentrated your blood is with red blood cells. Dehydration often causes a temporary increase.",
+      "lifestyle_factors": "Fluid intake before the blood draw, sweating, or altitude.",
+      "questions_for_doctor": [
+        "Was this result impacted by how much water I drank prior to the test?",
+        "How does this result compare with my previous blood tests?"
+      ]
+    },
+    "platelets": {
+      "name": "Platelet Count (PLT)",
+      "category": "cbc",
+      "standard_range": "150 - 450",
+      "unit": "x10^3/uL",
+      "analogy": "The tiny bandage makers that form clots to stop cuts from bleeding.",
+      "summary": "Platelets are cell fragments essential for normal blood clotting. Low levels can lead to easy bruising, while elevated levels often reflect temporary inflammation.",
+      "lifestyle_factors": "Recent physical recovery, mild infection, aspirin, or anti-inflammatory medications.",
+      "questions_for_doctor": [
+        "Could my current medications or over-the-counter pain relievers influence platelet counts?",
+        "Should I watch for unusual bruising or bleeding?"
+      ]
+    },
+    "cholesterol_total": {
+      "name": "Total Cholesterol",
+      "category": "lipid",
+      "standard_range": "< 200",
+      "unit": "mg/dL",
+      "analogy": "The overall measurement of all waxy lipid fats circulating in your bloodstream.",
+      "summary": "Total cholesterol combines HDL ('good'), LDL ('bad'), and other lipid components. It provides a baseline view of cardiovascular lipid balance.",
+      "lifestyle_factors": "Dietary saturated fats, aerobic exercise frequency, genetics, and metabolic rate.",
+      "questions_for_doctor": [
+        "What is my overall cardiovascular risk calculation rather than total cholesterol alone?",
+        "What specific dietary and exercise modifications would you recommend first?"
+      ]
+    },
+    "cholesterol_ldl": {
+      "name": "LDL Cholesterol ('Bad')",
+      "category": "lipid",
+      "standard_range": "< 100",
+      "unit": "mg/dL",
+      "analogy": "The slow-moving delivery trucks that can leave excess cargo behind on blood vessel walls.",
+      "summary": "Low-Density Lipoprotein (LDL) can build up inside artery walls over time if elevated. Lower numbers are generally desirable for arterial health.",
+      "lifestyle_factors": "Diet high in saturated/trans fats, sedentary lifestyle, genetic family traits.",
+      "questions_for_doctor": [
+        "Given my personal and family history, what is my ideal target for LDL?",
+        "How long should I try lifestyle changes before considering medication?"
+      ]
+    },
+    "cholesterol_hdl": {
+      "name": "HDL Cholesterol ('Good')",
+      "category": "lipid",
+      "standard_range": "> 40 (men), > 50 (women)",
+      "unit": "mg/dL",
+      "analogy": "The street sweepers that collect excess cholesterol and return it to the liver for disposal.",
+      "summary": "High-Density Lipoprotein (HDL) helps protect cardiovascular health by clearing excess cholesterol. Higher numbers are generally protective.",
+      "lifestyle_factors": "Regular aerobic exercise, olive oil/healthy fats, smoking cessation, and moderate weight.",
+      "questions_for_doctor": [
+        "What specific exercises are most effective at boosting HDL levels?",
+        "Does my ratio of HDL to total cholesterol look reassuring?"
+      ]
+    },
+    "triglycerides": {
+      "name": "Triglycerides",
+      "category": "lipid",
+      "standard_range": "< 150",
+      "unit": "mg/dL",
+      "analogy": "Stored energy fat droplets floating in the blood after meals.",
+      "summary": "Triglycerides are the most common type of fat in the body, derived from calories not immediately used for energy. High levels often correlate with refined carb or alcohol intake.",
+      "lifestyle_factors": "Fasting status (fasting vs non-fasting), alcohol consumption within 48 hours, sugar and refined carb intake.",
+      "questions_for_doctor": [
+        "Did my fasting duration before the test affect this number?",
+        "What dietary adjustments have the greatest impact on lowering triglycerides?"
+      ]
+    },
+    "glucose_fasting": {
+      "name": "Fasting Blood Glucose",
+      "category": "cmp",
+      "standard_range": "70 - 99",
+      "unit": "mg/dL",
+      "analogy": "The instant fuel level of sugar available in your blood tank right now.",
+      "summary": "Fasting glucose measures your blood sugar after at least 8 hours without food. It assesses how effectively your body's insulin manages energy.",
+      "lifestyle_factors": "Exact hours fasted, poor sleep the night before, acute stress, morning caffeine.",
+      "questions_for_doctor": [
+        "How long was my fasting window, and does that contextualize this number?",
+        "Would an HbA1c test be helpful to see my 3-month average?"
+      ]
+    },
+    "hba1c": {
+      "name": "Hemoglobin A1c (HbA1c)",
+      "category": "diabetes",
+      "standard_range": "< 5.7",
+      "unit": "%",
+      "analogy": "A 90-day video of your blood sugar trends, rather than a single snapshot.",
+      "summary": "HbA1c reflects the percentage of hemoglobin coated with sugar over the 2-3 month lifespan of red blood cells. 5.7% to 6.4% indicates prediabetes range.",
+      "lifestyle_factors": "Long-term carbohydrate balance, consistency of physical activity, sleep regularity.",
+      "questions_for_doctor": [
+        "What is our realistic target for my HbA1c over the next 6 months?",
+        "Can a consultation with a registered dietitian or diabetes educator be scheduled?"
+      ]
+    },
+    "creatinine": {
+      "name": "Serum Creatinine",
+      "category": "cmp",
+      "standard_range": "0.6 - 1.3",
+      "unit": "mg/dL",
+      "analogy": "The natural exhaust byproduct from muscle activity that healthy kidneys filter out.",
+      "summary": "Creatinine is a waste product filtered out by the kidneys. Elevated levels can indicate reduced kidney filtration efficiency or simple dehydration and high muscle mass.",
+      "lifestyle_factors": "Recent intense strength training, creatine supplements, dehydration, high red meat intake.",
+      "questions_for_doctor": [
+        "Could my workout routine or hydration level have influenced this creatinine result?",
+        "What was my calculated eGFR (estimated filtration rate)?"
+      ]
+    },
+    "bun": {
+      "name": "Blood Urea Nitrogen (BUN)",
+      "category": "cmp",
+      "standard_range": "7 - 20",
+      "unit": "mg/dL",
+      "analogy": "Waste byproduct from breaking down protein, cleared by the kidneys.",
+      "summary": "BUN evaluates kidney and liver function. High levels often reflect mild dehydration or very high protein intake.",
+      "lifestyle_factors": "Low fluid intake, high-protein diet, strenuous physical exertion.",
+      "questions_for_doctor": [
+        "How does the ratio between my BUN and creatinine look?",
+        "Should I increase my daily water intake before re-testing?"
+      ]
+    },
+    "alt": {
+      "name": "Alanine Aminotransferase (ALT)",
+      "category": "cmp",
+      "standard_range": "7 - 56",
+      "unit": "U/L",
+      "analogy": "An enzyme primarily found in liver cells that leaks into blood when liver cells are irritated.",
+      "summary": "ALT is a sensitive marker for liver health. Temporary elevations can occur from over-the-counter pain relievers (like acetaminophen), strenuous lifting, or alcohol.",
+      "lifestyle_factors": "Alcohol intake, acetaminophen or NSAID use, recent vigorous weight training.",
+      "questions_for_doctor": [
+        "Could any medications or supplements I take be causing this liver enzyme fluctuation?",
+        "Do you recommend checking this again in 4 to 8 weeks?"
+      ]
+    },
+    "tsh": {
+      "name": "Thyroid Stimulating Hormone (TSH)",
+      "category": "thyroid",
+      "standard_range": "0.4 - 4.5",
+      "unit": "uIU/mL",
+      "analogy": "The thermostat signal from your brain telling your thyroid furnace how hard to burn.",
+      "summary": "TSH is produced by the pituitary gland. When your thyroid is sluggish, TSH rises to signal it to work harder; when overactive, TSH drops.",
+      "lifestyle_factors": "Time of blood draw (circadian rhythm), severe illness recovery, biotin supplements.",
+      "questions_for_doctor": [
+        "Did I take biotin or any supplements that could interfere with this thyroid assay?",
+        "Would checking Free T4 and Free T3 give us a clearer overall picture?"
+      ]
+    },
+    "vitamin_d": {
+      "name": "25-Hydroxy Vitamin D",
+      "category": "vitamins",
+      "standard_range": "30 - 100",
+      "unit": "ng/mL",
+      "analogy": "The sunshine hormone critical for strong bones, immunity, and energy.",
+      "summary": "Vitamin D is essential for calcium absorption, bone density, and immune balance. Many people have suboptimal levels during winter or indoor work.",
+      "lifestyle_factors": "Sunlight exposure, skin pigmentation, sunscreen usage, geographical latitude.",
+      "questions_for_doctor": [
+        "What daily or weekly vitamin D3 dosage is appropriate for my target level?",
+        "When should we recheck my levels after supplementation?"
+      ]
+    }
+  }
+}

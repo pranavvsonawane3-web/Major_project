@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect AI — Healthcare Assistance Agent</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- Leaflet Maps CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+  <!-- Top Disclaimer Banner -->
+  <div class="disclaimer-banner">
+    <span>⚠️ <strong>Medical Disclaimer:</strong> CareConnect AI provides health navigation and educational information only. It does NOT diagnose illnesses or prescribe medications. In an emergency, call 911 or your local emergency number immediately.</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header-container">
+    <div class="header-top">
+      <div class="brand-area">
+        <div class="brand-logo">🩺</div>
+        <div>
+          <div class="brand-title">CareConnect AI</div>
+          <div class="brand-tagline">Healthcare Navigation & Patient Assistance Agent</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <span class="badge-guardrails">🛡️ Guardrails Active</span>
+        <span class="badge-engine" id="engine-badge">⚡ Offline Intelligence</span>
+        <button class="btn-emergency" id="btn-emergency-top">🚨 SOS Emergency</button>
+        <button class="btn-secondary" id="btn-settings-open">⚙️ Settings</button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab-chat">💬 AI Health Assistant</button>
+      <button class="tab-btn" data-tab="tab-reports">📄 Lab Report Decoder</button>
+      <button class="tab-btn" data-tab="tab-clinics">📍 Find Nearby Care</button>
+      <button class="tab-btn" data-tab="tab-checklist">📋 Doctor Visit Prep</button>
+      <button class="tab-btn" data-tab="tab-triage">🧭 Where Should I Go?</button>
+      <button class="tab-btn" data-tab="tab-emergency">🚨 Emergency Directory</button>
+    </nav>
+  </header>
+
+  <!-- Main Content Areas -->
+  <main class="main-wrapper">
+
+    <!-- TAB 1: Conversational AI Assistant -->
+    <section id="tab-chat" class="tab-content active">
+      <div class="chat-container">
+        <div class="chat-card">
+          <div class="chat-messages" id="chat-messages">
+            <div class="message-bubble assistant">
+              👋 <strong>Hello! I am CareConnect AI</strong>, your personal healthcare navigation and educational companion.
+              <br><br>
+              How can I assist you today?
+              <br><br>
+              • <strong>Explain lab results:</strong> Paste blood work numbers to get plain-English explanations.<br>
+              • <strong>Find local care:</strong> Locate hospitals, walk-in urgent care clinics, or pharmacies.<br>
+              • <strong>Doctor appointment prep:</strong> Create a personalized consultation brief and questions.<br>
+              • <strong>Emergency support:</strong> Immediate guidance and emergency hotline directions.<br>
+              <br>
+              <em>Note: I am designed with clinical guardrails and do not diagnose illnesses or prescribe medication.</em>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="chat-chips">
+              <button class="chip-btn" data-prompt="Explain what a Complete Blood Count (CBC) test measures">🧪 Explain CBC test</button>
+              <button class="chip-btn" data-prompt="Where is the nearest urgent care clinic?">🏥 Find urgent care</button>
+              <button class="chip-btn" data-prompt="I have persistent knee stiffness. Which specialist should I see?">🩺 Which doctor to see?</button>
+              <button class="chip-btn" data-prompt="Help me prepare questions for my upcoming annual checkup">📋 Prepare for doctor visit</button>
+              <button class="chip-btn" data-prompt="What should I do if someone has sudden severe chest pain?">🚨 Chest pain protocol</button>
+            </div>
+
+            <div class="input-box-wrapper">
+              <button class="btn-mic" id="btn-mic" title="Voice Input">🎤</button>
+              <input type="text" class="chat-input" id="chat-input" placeholder="Ask a health question, describe non-emergency symptoms, or request clinic guidance..." autocomplete="off">
+              <button class="btn-send" id="btn-send">Send ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Quick Cards -->
+        <div class="chat-sidebar">
+          <div class="side-card">
+            <div class="side-card-title">🚨 Immediate Red-Flags</div>
+            <div style="font-size: 0.85rem; color: #475569; line-height: 1.5;">
+              If you or someone nearby experiences:
+              <ul style="margin: 8px 0 8px 18px; color: #b91c1c; font-weight: 600;">
+                <li>Crushing chest pain or pressure</li>
+                <li>Face drooping or arm weakness</li>
+                <li>Severe difficulty breathing</li>
+                <li>Sudden severe headache</li>
+                <li>Heavy uncontrolled bleeding</li>
+              </ul>
+              <strong>Call 911 / 112 immediately.</strong>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <div class="side-card-title">💡 How CareConnect Helps</div>
+            <p style="font-size: 0.85rem; color: #475569; margin-bottom: 8px;">
+              Designed to improve health literacy and bridge communication between patients and clinical providers.
+            </p>
+            <div style="font-size: 0.82rem; color: #0284c7; background: #e0f2fe; padding: 10px; border-radius: 8px;">
+              ✓ Plain-language analogies<br>
+              ✓ Non-disease lifestyle context<br>
+              ✓ Questions for your physician
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Lab Report Decoder -->
+    <section id="tab-reports" class="tab-content">
+      <div class="report-grid">
+        <!-- Input Form -->
+        <div class="report-input-card">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">📄 Medical Report Simplifier</h3>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 12px;">
+            Paste your lab test values below or select a sample report to see how CareConnect translates medical jargon into plain English.
+          </p>
+
+          <div style="font-size: 0.8rem; font-weight: 600; color: #334155;">Quick Load Sample Reports:</div>
+          <div class="sample-buttons">
+            <button class="sample-btn" id="sample-cbc">🩸 Complete Blood Count (CBC)</button>
+            <button class="sample-btn" id="sample-lipid">🫀 Lipid & Cholesterol Panel</button>
+            <button class="sample-btn" id="sample-cmp">🔬 Comprehensive Metabolic & Glucose</button>
+          </div>
+
+          <textarea class="report-textarea" id="report-textarea" placeholder="Paste report text here, for example:
+WBC: 12.4 x10^3/uL
+Hemoglobin: 11.2 g/dL
+Total Cholesterol: 235 mg/dL
+Fasting Glucose: 114 mg/dL
+HbA1c: 6.2%"></textarea>
+
+          <div class="file-dropzone" id="file-dropzone">
+            <div style="font-size: 1.3rem; margin-bottom: 4px;">📁</div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #334155;">Click to upload document or image</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">Supports .txt, .png, .jpg (Gemini Vision enabled)</div>
+            <input type="file" id="report-file-input" style="display: none;" accept=".txt,image/*">
+          </div>
+
+          <button class="btn-send" id="btn-decode-report" style="width: 100%; justify-content: center; padding: 12px;">
+            🔍 Decode & Explain Report
+          </button>
+        </div>
+
+        <!-- Output Results -->
+        <div class="report-results-card" id="report-results">
+          <div style="text-align: center; padding: 60px 20px; color: #94a3b8;">
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">📑</div>
+            <div style="font-size: 1.05rem; font-weight: 600; color: #475569;">No lab report analyzed yet</div>
+            <div style="font-size: 0.85rem; max-width: 360px; margin: 8px auto;">
+              Paste your lab results on the left or click a sample report button to see plain-English explanations and smart doctor questions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Clinic & Hospital Finder -->
+    <section id="tab-clinics" class="tab-content">
+      <div class="map-layout">
+        <!-- List Panel -->
+        <div class="clinic-list-panel">
+          <div class="clinic-filter-bar">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <strong style="font-size: 1rem;">📍 Nearby Care Facilities</strong>
+              <button class="btn-secondary" id="btn-get-location" style="font-size: 0.75rem; padding: 4px 8px;">
+                📍 My Location
+              </button>
+            </div>
+            <select class="form-control" id="clinic-filter" style="font-size: 0.85rem; padding: 6px 10px;">
+              <option value="all">All Healthcare Facilities</option>
+              <option value="hospital">Hospitals & Emergency Rooms (ER)</option>
+              <option value="urgent_care">Urgent Care Walk-In Clinics</option>
+              <option value="clinic">Primary Care & Health Centers</option>
+              <option value="pharmacy">Pharmacies</option>
+            </select>
+          </div>
+
+          <div class="clinic-cards-container" id="clinic-cards">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Interactive Map Panel -->
+        <div class="map-container-card">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Appointment Preparation Checklist -->
+    <section id="tab-checklist" class="tab-content">
+      <div class="checklist-grid">
+        <!-- Form -->
+        <div class="side-card">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">📋 Doctor Appointment Preparation</h3>
+          <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">
+            Complete this brief guide to generate a structured consultation summary and targeted questions for your doctor.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Primary Reason for Visit / Main Symptom</label>
+            <input type="text" class="form-control" id="prep-complaint" placeholder="e.g. Persistent knee stiffness and morning swelling">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">How long has this been occurring?</label>
+            <input type="text" class="form-control" id="prep-duration" placeholder="e.g. About 3 weeks, worse after walking">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Discomfort / Pain Level (1 to 10): <span id="severity-val" style="color: #0284c7; font-weight: 700;">5</span></label>
+            <input type="range" min="1" max="10" value="5" class="form-control" id="prep-severity" oninput="document.getElementById('severity-val').textContent = this.value">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Current Medications & Daily Supplements (one per line)</label>
+            <textarea class="form-control" id="prep-meds" rows="3" placeholder="Multivitamin once daily&#10;Vitamin D3 2000 IU&#10;Lisinopril 10mg (morning)"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Allergies (Medications, Foods, Latex)</label>
+            <input type="text" class="form-control" id="prep-allergies" placeholder="e.g. Penicillin (hives), Sulfa drugs">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Specific Concerns or Questions You Have</label>
+            <textarea class="form-control" id="prep-concerns" rows="2" placeholder="e.g. Does this need an MRI, or can we start with physical therapy?"></textarea>
+          </div>
+
+          <button class="btn-send" id="btn-generate-checklist" style="width: 100%; justify-content: center; padding: 12px;">
+            ✨ Generate Consultation Brief
+          </button>
+        </div>
+
+        <!-- Output / Preview -->
+        <div class="side-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="font-size: 1.05rem; font-weight: 700;">📄 Consultation Brief Preview</h3>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn-secondary" id="btn-copy-brief" style="font-size: 0.8rem;">📋 Copy</button>
+              <button class="btn-secondary" id="btnPrint" id="btn-print-brief" style="font-size: 0.8rem;">🖨️ Print</button>
+            </div>
+          </div>
+          <div class="brief-output" id="checklist-output">Fill in the visit details on the left and click "Generate Consultation Brief" to create your personalized doctor visit checklist.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: Care Triage Guide ("Where Should I Go?") -->
+    <section id="tab-triage" class="tab-content">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="side-card" style="margin-bottom: 24px;">
+          <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">🧭 Healthcare Service Triage Guide</h2>
+          <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 16px;">
+            Unsure whether to visit an Emergency Room, an Urgent Care walk-in clinic, or schedule with a Primary Care doctor or specialist? Describe what you are experiencing below.
+          </p>
+
+          <div style="font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 8px;">Common Scenarios:</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+            <button class="chip-btn triage-chip" data-symptom="Twisted ankle while running, swollen and bruised">Twisted ankle / sprain</button>
+            <button class="chip-btn triage-chip" data-symptom="New asymmetrical dark mole on shoulder">Changing skin mole</button>
+            <button class="chip-btn triage-chip" data-symptom="Mild sore throat and runny nose for 2 days">Mild sore throat & cold</button>
+            <button class="chip-btn triage-chip" data-symptom="Severe sudden crushing chest pain and left arm numbness">Severe chest pain</button>
+            <button class="chip-btn triage-chip" data-symptom="Frequent heartburn and acid reflux after eating">Frequent acid reflux</button>
+          </div>
+
+          <div class="input-box-wrapper" style="margin-bottom: 16px;">
+            <input type="text" class="chat-input" id="triage-input" placeholder="Type your symptom or concern here (e.g. deep cut on finger needing stitches)...">
+            <button class="btn-send" id="btn-triage">Evaluate Care Level ➔</button>
+          </div>
+
+          <div id="triage-result"></div>
+        </div>
+
+        <!-- Care Levels Reference Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+          <div style="background: white; border: 1px solid #fee2e2; border-radius: 12px; padding: 16px;">
+            <div style="font-weight: 700; color: #dc2626; margin-bottom: 6px;">🚨 Emergency Room (ER)</div>
+            <div style="font-size: 0.82rem; color: #475569;">
+              For life- or limb-threatening emergencies: severe chest pain, stroke symptoms, uncontrolled bleeding, severe breathing distress.
+            </div>
+          </div>
+          <div style="background: white; border: 1px solid #fef3c7; border-radius: 12px; padding: 16px;">
+            <div style="font-weight: 700; color: #d97706; margin-bottom: 6px;">⚡ Urgent Care</div>
+            <div style="font-size: 0.82rem; color: #475569;">
+              For same-day walk-in needs: sprains, cuts needing stitches, earaches, urinary discomfort, minor burns, flu/strep tests.
+            </div>
+          </div>
+          <div style="background: white; border: 1px solid #e0f2fe; border-radius: 12px; padding: 16px;">
+            <div style="font-weight: 700; color: #0284c7; margin-bottom: 6px;">🩺 Primary Care / Telehealth</div>
+            <div style="font-size: 0.82rem; color: #475569;">
+              For routine checkups, chronic health management (blood pressure, diabetes), prescription renewals, non-urgent symptoms.
+            </div>
+          </div>
+          <div style="background: white; border: 1px solid #ccfbf1; border-radius: 12px; padding: 16px;">
+            <div style="font-weight: 700; color: #0d9488; margin-bottom: 6px;">🔬 Specialist</div>
+            <div style="font-size: 0.82rem; color: #475569;">
+              For organ-specific or complex conditions: Dermatology, Cardiology, Orthopedics, Neurology, Gastroenterology.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: Emergency Directory -->
+    <section id="tab-emergency" class="tab-content">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="side-card" style="margin-bottom: 24px; border-top: 4px solid #dc2626;">
+          <h2 style="font-size: 1.3rem; font-weight: 700; color: #b91c1c; margin-bottom: 8px;">
+            🚨 Emergency Numbers & Crisis Hotlines
+          </h2>
+          <p style="font-size: 0.9rem; color: #475569; margin-bottom: 16px;">
+            Select your country to view verified emergency and crisis support lines.
+          </p>
+
+          <div style="margin-bottom: 16px;">
+            <label class="form-label">Select Country / Region:</label>
+            <select class="form-control" id="emergency-country-select" style="max-width: 320px;">
+              <option value="US">United States (911 / 988)</option>
+              <option value="UK">United Kingdom (999 / 111)</option>
+              <option value="CA">Canada (911 / 988)</option>
+              <option value="AU">Australia (000 / Lifeline)</option>
+              <option value="IN">India (112 / Tele-MANAS)</option>
+              <option value="EU">European Union (112)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 14px; text-align: center;">
+              <div style="font-size: 0.82rem; font-weight: 600; color: #991b1b;">Ambulance & Emergency</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: #dc2626; margin: 4px 0;" id="em-number-general">911</div>
+              <a href="tel:911" id="em-number-general-link" class="btn-emergency" style="text-decoration: none; justify-content: center; width: 100%;">
+                📞 Call Now
+              </a>
+            </div>
+
+            <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px; text-align: center;">
+              <div style="font-size: 0.82rem; font-weight: 600; color: #1e40af;">Suicide & Mental Crisis</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: #2563eb; margin: 4px 0;" id="em-number-crisis">988</div>
+              <a href="tel:988" id="em-number-crisis-link" class="btn-secondary" style="text-decoration: none; display: block; text-align: center;">
+                📞 Call Crisis Line
+              </a>
+            </div>
+
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px; text-align: center;">
+              <div style="font-size: 0.82rem; font-weight: 600; color: #166534;">Poison Control</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #16a34a; margin: 8px 0;" id="em-number-poison">1-800-222-1222</div>
+              <span style="font-size: 0.75rem; color: #64748b;">Free & Confidential 24/7</span>
+            </div>
+          </div>
+
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 8px;">🎙️ What to tell the Emergency Dispatcher:</h4>
+          <ol style="margin-left: 20px; font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>State your location first:</strong> Address, cross streets, apartment or floor number.</li>
+            <li><strong>State the main issue:</strong> "The person is having crushing chest pain and trouble breathing."</li>
+            <li><strong>Stay on the line:</strong> Responders are dispatched while the operator talks to you. Do not hang up.</li>
+            <li><strong>Unlock front doors</strong> and turn on outside porch lights if safe to do so.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Emergency Quick Modal -->
+  <dialog id="emergency-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color: #dc2626; font-size: 1.2rem;">🚨 Emergency Quick Action</h3>
+        <button class="btn-close" id="btn-close-emergency">&times;</button>
+      </div>
+      <p style="font-size: 0.9rem; margin-bottom: 16px;">
+        If you or someone nearby is experiencing a medical emergency, do not delay care.
+      </p>
+      <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+        <a href="tel:911" class="btn-emergency" style="text-decoration: none; flex: 1; justify-content: center; padding: 12px;">
+          📞 Call 911 (US/Canada)
+        </a>
+        <a href="tel:112" class="btn-emergency" style="text-decoration: none; flex: 1; justify-content: center; padding: 12px; background: #0284c7;">
+          📞 Call 112 (EU/India)
+        </a>
+      </div>
+      <div style="background: #f8fafc; border-radius: 8px; padding: 12px; font-size: 0.85rem; color: #475569;">
+        <strong>Mental Health Crisis?</strong> Call or text <strong>988</strong> for 24/7 confidential help.
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Settings Modal -->
+  <dialog id="settings-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem;">⚙️ CareConnect AI Settings</h3>
+        <button class="btn-close" id="btn-close-settings">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 14px;">
+        CareConnect AI operates 100% offline using its built-in medical rule engine. You can optionally connect your Google Gemini API Key for multimodal document vision and conversational expansion.
+      </p>
+      <div class="form-group">
+        <label class="form-label">Google Gemini API Key</label>
+        <input type="password" class="form-control" id="settings-gemini-key" placeholder="AIzaSy...">
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn-send" id="btn-save-key">Save API Key</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

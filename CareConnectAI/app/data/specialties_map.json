@@ -1,0 +1,103 @@
+{
+  "care_levels": {
+    "emergency": {
+      "name": "Emergency Room (ER) / Call Emergency",
+      "badge": "🚨 Immediate Attention",
+      "wait_time": "Immediate triage",
+      "when_to_go": "Life- or limb-threatening emergencies, severe chest pain, sudden numbness/paralysis, difficulty breathing, deep uncontrolled bleeding, severe burns."
+    },
+    "urgent_care": {
+      "name": "Urgent Care Center",
+      "badge": "⚡ Same-Day Walk-In",
+      "wait_time": "15 - 60 minutes",
+      "when_to_go": "Non-life-threatening conditions needing same-day attention when your regular doctor is unavailable: sprains, minor fractures, cuts needing stitches, ear infections, mild asthma, urinary symptoms."
+    },
+    "primary_care": {
+      "name": "Primary Care / Family Doctor / Telehealth",
+      "badge": "🩺 Scheduled Consultation",
+      "wait_time": "By appointment / Telehealth",
+      "when_to_go": "Preventive screenings, long-term chronic condition management (hypertension, diabetes), medication refills, routine cold/flu, non-urgent aches."
+    },
+    "specialist": {
+      "name": "Medical Specialist",
+      "badge": "🔬 Specialist Referral",
+      "wait_time": "Referral usually required",
+      "when_to_go": "Persistent, complex, or organ-specific symptoms requiring advanced diagnostic workups."
+    }
+  },
+  "specialties": {
+    "Cardiology": {
+      "description": "Heart and cardiovascular system specialists.",
+      "common_triggers": ["palpitations", "irregular heartbeat", "high blood pressure", "cholesterol management", "family history of heart disease"]
+    },
+    "Dermatology": {
+      "description": "Skin, hair, and nail specialists.",
+      "common_triggers": ["changing mole", "persistent rash", "severe acne", "eczema flare", "unexplained skin lesion", "hair loss"]
+    },
+    "Orthopedics": {
+      "description": "Bones, joints, ligaments, tendons, and musculoskeletal system.",
+      "common_triggers": ["knee pain", "shoulder tear", "chronic back pain", "joint stiffness", "sports injury", "arthritis"]
+    },
+    "Gastroenterology": {
+      "description": "Digestive tract, stomach, intestines, liver, and gallbladder.",
+      "common_triggers": ["chronic acid reflux", "frequent heartburn", "persistent bloating", "abdominal cramping", "blood in stool", "bowel habit changes"]
+    },
+    "Neurology": {
+      "description": "Brain, spinal cord, and peripheral nervous system.",
+      "common_triggers": ["frequent migraines", "neuropathy", "tingling in hands or feet", "tremors", "dizziness or balance issues", "memory changes"]
+    },
+    "Pulmonology": {
+      "description": "Lungs and respiratory system.",
+      "common_triggers": ["chronic cough", "asthma management", "wheezing", "sleep apnea or snoring", "shortness of breath during exertion"]
+    },
+    "Otolaryngology (ENT)": {
+      "description": "Ear, Nose, and Throat specialists.",
+      "common_triggers": ["persistent sinus infection", "tinnitus or ear ringing", "chronic hoarseness", "hearing difficulty", "swallowing discomfort"]
+    },
+    "Endocrinology": {
+      "description": "Hormones, metabolism, thyroid, and adrenal glands.",
+      "common_triggers": ["thyroid nodules", "unexplained weight changes", "difficult-to-control diabetes", "hormonal imbalances", "adrenal fatigue"]
+    },
+    "Psychiatry & Behavioral Health": {
+      "description": "Mental, emotional, and behavioral health.",
+      "common_triggers": ["persistent anxiety", "depression", "panic attacks", "insomnia", "burnout", "mood fluctuations"]
+    },
+    "Urology": {
+      "description": "Urinary tract in men and women, and male reproductive system.",
+      "common_triggers": ["kidney stones", "painful urination", "frequent night urination", "prostate issues"]
+    },
+    "Allergy & Immunology": {
+      "description": "Allergies, asthma, and immune system disorders.",
+      "common_triggers": ["seasonal allergies", "food allergies", "hives", "frequent recurring infections"]
+    }
+  },
+  "triage_scenarios": [
+    {
+      "trigger": "chest pain or left arm heaviness",
+      "care_level": "emergency",
+      "rationale": "Chest pain can be an indicator of acute coronary syndrome. Must be evaluated immediately in an Emergency Department."
+    },
+    {
+      "trigger": "twisted ankle while running, can put weight with pain",
+      "care_level": "urgent_care",
+      "rationale": "Urgent Care clinics have on-site X-ray machines to rule out fractures and can provide splints or braces immediately."
+    },
+    {
+      "trigger": "mild throat tickle and runny nose for 2 days",
+      "care_level": "primary_care",
+      "rationale": "Typical viral upper respiratory symptoms. Suitable for primary care or telehealth consultation if symptoms persist past 7–10 days."
+    },
+    {
+      "trigger": "new dark mole on shoulder with irregular borders",
+      "care_level": "specialist",
+      "specialty": "Dermatology",
+      "rationale": "Moles with asymmetrical shapes or irregular borders should be inspected using dermoscopy by a dermatologist."
+    },
+    {
+      "trigger": "persistent morning stiffness in finger joints for 3 months",
+      "care_level": "specialist",
+      "specialty": "Orthopedics",
+      "rationale": "Chronic joint symptoms warrant a targeted evaluation for inflammatory or mechanical joint conditions."
+    }
+  ]
+}

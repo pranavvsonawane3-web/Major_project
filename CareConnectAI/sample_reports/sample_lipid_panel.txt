@@ -1,0 +1,16 @@
+=============================================================
+ADVANCED DIAGNOSTICS - LIPID / CHOLESTEROL PANEL
+Patient: Sample Patient           Date of Collection: 2026-10-25
+Physician: Dr. S. Rao             Fasting Status: Fasting 12 hrs
+=============================================================
+
+TEST NAME                     RESULT       UNITS         DESIRABLE INTERVAL
+-------------------------------------------------------------------------
+Total Cholesterol             235   HIGH   mg/dL         < 200
+LDL Cholesterol (Calculated)  154   HIGH   mg/dL         < 100
+HDL Cholesterol               42           mg/dL         > 40
+Triglycerides                 195   HIGH   mg/dL         < 150
+
+General Advice:
+Cardiovascular risk profile is influenced by combined risk factors.
+=============================================================

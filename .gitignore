@@ -38,7 +38,6 @@ env.bak/
 venv.bak/
 
 # Unrelated standalone workspaces in this folder
-CareConnectAI/
 *.git_backup/
 
 # Logs and databases

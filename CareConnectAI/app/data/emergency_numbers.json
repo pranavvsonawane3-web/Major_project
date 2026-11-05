@@ -1,0 +1,110 @@
+{
+  "red_flag_symptoms": [
+    "chest pain",
+    "chest pressure",
+    "crushing chest pain",
+    "left arm pain",
+    "pain radiating to jaw",
+    "sudden numbness",
+    "facial droop",
+    "slurred speech",
+    "arm weakness",
+    "difficulty breathing",
+    "severe shortness of breath",
+    "blue lips",
+    "choking",
+    "coughing up blood",
+    "uncontrolled bleeding",
+    "sudden severe headache",
+    "thunderclap headache",
+    "loss of consciousness",
+    "passed out",
+    "fainting with chest pain",
+    "anaphylaxis",
+    "throat swelling",
+    "allergic reaction breathing",
+    "suicidal thoughts",
+    "want to end my life",
+    "kill myself",
+    "overdose",
+    "poisoning",
+    "seizure longer than 5 minutes",
+    "first time seizure",
+    "stiff neck with high fever"
+  ],
+  "countries": {
+    "US": {
+      "name": "United States",
+      "general": "911",
+      "ambulance": "911",
+      "police": "911",
+      "fire": "911",
+      "mental_health_crisis": "988",
+      "poison_control": "1-800-222-1222",
+      "crisis_text": "Text HOME to 741741",
+      "non_emergency_police": "311"
+    },
+    "UK": {
+      "name": "United Kingdom",
+      "general": "999",
+      "ambulance": "999",
+      "police": "999",
+      "fire": "999",
+      "mental_health_crisis": "111 (NHS 111 Mental Health)",
+      "poison_control": "111",
+      "crisis_text": "Text SHOUT to 85258",
+      "non_emergency_medical": "111"
+    },
+    "CA": {
+      "name": "Canada",
+      "general": "911",
+      "ambulance": "911",
+      "police": "911",
+      "fire": "911",
+      "mental_health_crisis": "988",
+      "poison_control": "1-844-POISON-X",
+      "crisis_text": "Text 686868",
+      "non_emergency_medical": "811"
+    },
+    "AU": {
+      "name": "Australia",
+      "general": "000",
+      "ambulance": "000",
+      "police": "000",
+      "fire": "000",
+      "mental_health_crisis": "13 11 14 (Lifeline)",
+      "poison_control": "13 11 26",
+      "crisis_text": "0477 13 11 14",
+      "non_emergency_medical": "1800 022 222 (Healthdirect)"
+    },
+    "IN": {
+      "name": "India",
+      "general": "112",
+      "ambulance": "102 / 108",
+      "police": "100",
+      "fire": "101",
+      "mental_health_crisis": "14416 (Tele-MANAS)",
+      "poison_control": "1800-116-117 (AIIMS)",
+      "crisis_text": "9152987821 (iCall)",
+      "non_emergency_medical": "1075 (National Health Helpline)"
+    },
+    "EU": {
+      "name": "European Union (Universal)",
+      "general": "112",
+      "ambulance": "112",
+      "police": "112",
+      "fire": "112",
+      "mental_health_crisis": "116 123",
+      "poison_control": "Contact local 112 for center",
+      "crisis_text": "Varies by EU country",
+      "non_emergency_medical": "116 117"
+    }
+  },
+  "dispatcher_instructions": [
+    "State your exact location first (address, cross-streets, floor, or GPS).",
+    "Describe what happened clearly: 'The person has chest pain and difficulty breathing'.",
+    "Answer all dispatcher questions calmly; emergency responders are dispatched while you are still on the line.",
+    "Do not hang up until instructed by the operator.",
+    "Unlock front doors and turn on outside porch lights if safe to do so."
+  ]
+}

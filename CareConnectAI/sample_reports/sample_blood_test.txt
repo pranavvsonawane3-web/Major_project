@@ -1,0 +1,17 @@
+=============================================================
+METROPOLITAN CLINICAL LABORATORIES - PATIENT REPORT
+Patient: Sample Patient           Date of Collection: 2026-10-24
+Physician: Dr. J. Martinez        Order: Complete Blood Count (CBC)
+=============================================================
+
+TEST NAME                     RESULT       UNITS         REFERENCE INTERVAL
+-------------------------------------------------------------------------
+White Blood Cell Count (WBC)  12.4  HIGH   x10^3/uL      4.5 - 11.0
+Red Blood Cell Count (RBC)    4.1   LOW    million/uL    4.2 - 5.9
+Hemoglobin (Hgb)              11.2  LOW    g/dL          12.0 - 17.5
+Hematocrit (Hct)              34.8  LOW    %             36.0 - 50.0
+Platelet Count (PLT)          310          x10^3/uL      150 - 450
+
+Notes: Mild leukocytosis noted. Red cell parameters mildly microcytic.
+Consult ordering physician for correlation.
+=============================================================
